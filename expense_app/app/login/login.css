@@ -1,0 +1,47 @@
+/*Styling for the body*/
+body{
+    font-family:sans-serif;
+    background-color: #508D9E;
+}
+
+/*Styling for the form element*/
+form{
+    background-color: #79D6EC;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/*Styling for the legend element*/
+legend{
+    /*background-color: blue;*/
+    text-align: center;
+    font-size: 3em;
+}
+
+/*Styling for self-defined identifier to design the footer of the form*/
+#formFooter{
+    background-color: white;
+    border: solid 1pt white;
+}
+
+/*Styling for self-defined class to design the green submit and clear form buttons.*/
+.blueButton{
+    background-color: white;
+    color: black;
+    padding:1em;
+    border-radius: 0.5em;
+    text-align: center;
+    border:outset;
+}
+
+/*Styling for self-defined class to design the green border around the descendents of the p element.*/
+.blueBorder{
+    border: solid 1pt blue;
+    padding: 0.5em;
+    text-align: center;
+}
+
+h1{
+    background-color: #03233F;
+    color: white;
+}
