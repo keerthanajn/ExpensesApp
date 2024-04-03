@@ -1,21 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #1c1c1c;
     margin: 0;
     padding: 0;
   }
+  header {
+    background-color: #01100c; /* Dark blue background for the header */
+    color: white;
+    padding: 1em;
+    border-radius: 8px 8px 0 0; /* Only round the top corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+  .header_item
+{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+header a
+{
+    color: white; /* Text color for the links */
+    text-decoration: none; /* No underline */
+}
   
   .claims-container {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #959595;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
-    color: #333;
+    color: #01100c;
     text-align: center;
   }
   

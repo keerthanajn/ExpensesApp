@@ -1,96 +1,99 @@
 /* General body styling */
 body {
-    font-family: sans-serif;
-    background-color: #508D9E; /* Blueish background color for the body */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Container for the entire form area */
-  .container {
-    background-color: #79D6EC; /* Light blue background color for the container */
-    width: 60%; /* Container takes up 60% of the body width */
-    border-radius: 10px;
-    padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Header styles with user profile and navigation */
-  header {
-    background-color: #03233F; /* Dark blue background for the header */
-    color: white;
-    padding: 1em;
-    border-radius: 8px 8px 0 0; /* Only round the top corners */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Header title */
-  header h1 {
-    font-size: 1.5em; /* Adjust size as needed */
-    margin: 0; /* Remove default margin */
-  }
-  
-  /* Navigation styling */
-  nav ul {
-    list-style-type: none; /* No bullets for the list */
-    display: flex;
-    gap: 1em;
-  }
-  
-  nav ul li a {
-    color: white; /* Text color for the links */
-    text-decoration: none; /* No underline */
-    font-weight: bold;
-  }
-  
-  /* Styling form fields */
-  .form-group label {
-    display: block;
-    margin-top: 1em;
-  }
-  
-  .form-group input[type="text"],
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 0.5em; /* Space between label and input */
-    border-radius: 5px; /* Rounded borders for inputs */
-    border: 1px solid #79D6EC; /* Border color to match form background */
-  }
-  
-  /* Styling for the form actions area at the bottom */
-  #formFooter {
-    background-color: white;
-    border: none; /* No border */
-    text-align: center;
-    padding: 1em 0; /* Padding at the top and bottom */
-  }
-  
-  /* Button styling */
-  .blueButton {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px solid #03233F; /* Border color to match header */
-    cursor: pointer;
-    font-weight: bold;
-    margin-right: 10px; /* Space between buttons */
-  }
-  
-  .blueButton:hover {
-    background-color: #cccccc; /* Light grey background for hover state */
-  }
-  
-  /* Styling for the form's blue borders around inputs */
-  .blueBorder {
-    border: 1px solid blue; /* Blue border as specified */
-    padding: 10px; /* Padding inside the border */
-    margin-top: 1em; /* Space above the bordered area */
-  }
-  
+  font-family: sans-serif;
+  background-color: #1c1c1c; /* Blueish background color for the body */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container for the entire form area */
+.container {
+  background-color: #959595; /* Light blue background color for the container */
+  width: 60%; /* Container takes up 60% of the body width */
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#notes
+{
+resize: none;
+}
+/* Header styles with user profile and navigation */
+header {
+  background-color: #01100c; /* Dark blue background for the header */
+  color: white;
+  padding: 1em;
+  border-radius: 8px 8px 0 0; /* Only round the top corners */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header title */
+header h1 {
+  font-size: 1.5em; /* Adjust size as needed */
+  margin: 0; /* Remove default margin */
+}
+
+/* Navigation styling */
+nav ul {
+  list-style-type: none; /* No bullets for the list */
+  display: flex;
+  gap: 1em;
+}
+
+nav ul li a {
+  color: white; /* Text color for the links */
+  text-decoration: none; /* No underline */
+  font-weight: bold;
+}
+
+/* Styling form fields */
+.form-group label {
+  display: block;
+  margin-top: 1em;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5em; /* Space between label and input */
+  border-radius: 5px; /* Rounded borders for inputs */
+  border: 1px solid #79D6EC; /* Border color to match form background */
+}
+
+/* Styling for the form actions area at the bottom */
+#formFooter {
+  background-color: white;
+  border: none; /* No border */
+  text-align: center;
+  padding: 1em 0; /* Padding at the top and bottom */
+}
+
+/* Button styling */
+.blueButton {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #03233F; /* Border color to match header */
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px; /* Space between buttons */
+}
+
+.blueButton:hover {
+  background-color: #cccccc; /* Light grey background for hover state */
+}
+
+/* Styling for the form's blue borders around inputs */
+.blueBorder {
+  border: 1px solid blue; /* Blue border as specified */
+  padding: 10px; /* Padding inside the border */
+  margin-top: 1em; /* Space above the bordered area */
+}

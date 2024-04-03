@@ -1,5 +1,5 @@
 import React from 'react';
-import './submit.css';
+import './submit.css'; // Make sure to create an appropriate App.css file for styles
 
 export default function Submit(){
 

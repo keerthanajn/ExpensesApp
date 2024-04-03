@@ -1,0 +1,98 @@
+
+header
+{
+    background-color: #01100c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+}
+a
+{
+    color: white; /* Text color for the links */
+    text-decoration: none; /* No underline */
+}
+.header_item
+{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/*Styling for the body*/
+body{
+    font-family:sans-serif;
+    background-color: #1c1c1c;
+    margin: 0rem;
+}
+
+/*Styling for the form element*/
+form{
+    background-color: #959595;
+    margin-top: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 7rem;
+    padding-left: 7rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    display: grid;
+    grid-template-areas:
+    'legend legend'
+    'subject_textbox subject_textbox'
+    'description_textbox description_textbox'
+    'clear_button submit_button'
+    ;
+}
+legend
+{
+    grid-area: legend;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    font-family:'Roboto Mono', monospace;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+#subject_textbox
+{
+    grid-area: subject_textbox;
+    height: 3rem;
+}
+#description_textbox
+{
+    grid-area: description_textbox;
+    height: 7rem;
+    resize: none;
+}
+#clear_button
+{
+    grid-area: clear_button;
+    height: 2rem;
+}
+#submit_button
+{
+    grid-area: submit_button;
+    height: 2rem;
+}
+
+.inputbox
+{
+    font-size: large;
+    font-family:'Roboto Mono', monospace ;
+    border:unset;
+    border-bottom: 1.5pt solid grey;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+}
+button
+{
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    font-size: large;
+    font-family:'Roboto Mono', monospace ;
+    font-weight: bold;
+    
+}

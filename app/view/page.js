@@ -5,6 +5,8 @@ export default function View(){
 
   return (
     <body>
+        <header><p class="header_item">FDM Expenses App</p> <p class="header_item"><a href="#home">Sign out</a></p></header>
+      
         <div class="claims-container">
             <h1>View Claims</h1>
             <div class="claims-section" id="active-claims">

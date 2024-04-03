@@ -1,12 +1,12 @@
 /*Styling for the body*/
 body{
     font-family:sans-serif;
-    background-color: #508D9E;
+    background-color: #1c1c1c;
 }
 
 /*Styling for the form element*/
 form{
-    background-color: #79D6EC;
+    background-color: #959595;
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -42,6 +42,6 @@ legend{
 }
 
 h1{
-    background-color: #03233F;
+    background-color: #01100c;
     color: white;
 }
