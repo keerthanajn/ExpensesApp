@@ -1,4 +1,4 @@
-// File: /Users/davidghorbani-nia/Desktop/swe-temp/ExpensesApp/app/layout.js
+// File: /Users/alysasyahin/Documents/GitHub/ExpensesApp/app/layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
