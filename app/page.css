@@ -27,8 +27,9 @@ body
     height: 4rem;
     font-size: 15px;
     border-radius: 20pt;
-    border: rgb(0, 0, 0) solid 2pt;
-    background-color: rgb(213, 208, 208);
+    border: rgb(255, 255, 255) solid 2pt;
+    color: white;
+    background-color: rgb(213, 208, 208, 0.4);
     cursor: pointer;
 }
 #sign_button span
