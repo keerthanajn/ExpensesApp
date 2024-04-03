@@ -7,6 +7,8 @@ header
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
+    font-family:'Roboto Mono', monospace;
+    grid-area: header;
 }
 a
 {
@@ -17,6 +19,29 @@ a
 {
     margin-left: 1rem;
     margin-right: 1rem;
+}
+body{
+    font-family:sans-serif;
+    background-color: #1c1c1c;
+    height: 100vh;
+    margin: 0rem;
+    display: grid;
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: 3.5rem auto;
+    grid-template-areas:
+    'header header header'
+    'sidebar contentbox contentbox'
+    ;
+}
+#sidebar
+{
+    grid-area: sidebar;
+    background-color: grey;
+    height: 100%;
+}
+#contentbox
+{
+    grid-area: contentbox;
 }
 /*Styling for the body*/
 body{

@@ -1,20 +1,55 @@
 /* General body styling */
-body {
-  font-family: sans-serif;
-  background-color: #1c1c1c; /* Blueish background color for the body */
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+header
+{
+    background-color: #01100c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    font-family:'Roboto Mono', monospace;
+    grid-area: header;
+}
+a
+{
+    color: white; /* Text color for the links */
+    text-decoration: none; /* No underline */
+}
+.header_item
+{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+body{
+    font-family:sans-serif;
+    background-color: #1c1c1c;
+    height: 100vh;
+    margin: 0rem;
+    display: grid;
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: 3.5rem auto;
+    grid-template-areas:
+    'header header header'
+    'sidebar contentbox contentbox'
+    ;
+}
+#sidebar
+{
+    grid-area: sidebar;
+    background-color: grey;
+    height: 100%;
+}
+#contentbox
+{
+    grid-area: contentbox;
 }
 
 /* Container for the entire form area */
 .container {
   background-color: #959595; /* Light blue background color for the container */
-  width: 60%; /* Container takes up 60% of the body width */
   border-radius: 10px;
   padding: 2em;
+  margin: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -23,15 +58,7 @@ body {
 resize: none;
 }
 /* Header styles with user profile and navigation */
-header {
-  background-color: #01100c; /* Dark blue background for the header */
-  color: white;
-  padding: 1em;
-  border-radius: 8px 8px 0 0; /* Only round the top corners */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 /* Header title */
 header h1 {
