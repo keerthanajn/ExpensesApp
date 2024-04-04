@@ -3,8 +3,8 @@ import './profile.css'
 export default function Profile() {
     return (
         <>
-        <header> <a href="mainpage" class="header_item">FDM Expenses App</a>   <p href="login" class="header_item"><a href="#home">Sign out</a></p> </header>
-        <div id="sidebar">
+        <header> <p><a href="mainpage" class="header_item">FDM Expenses App</a></p>   <p href="login" class="header_item"><a href="#home">Sign out</a></p> </header>
+      <div id="sidebar">
           <a href="view" class="sidebar_item">View Claims</a>
           <a href="submit" class="sidebar_item">Submit a Claim</a>
           <a href="reviews" class="sidebar_item">Review a Claim</a>
