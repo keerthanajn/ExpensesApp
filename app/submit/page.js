@@ -7,41 +7,36 @@ export default function Submit(){
     <>
       <header> <p class="header_item">FDM Expenses App</p>   <p class="header_item"><a href="#home">Sign out</a></p> </header>
       <div id="sidebar">
-      <ul>
-          <li>temp1</li>
-          <li>temp2</li>
-          <li>temp3</li>
-          <li>temp4</li>
-          <li>temp5</li>
-        </ul>
+          <a href="view" class="sidebar_item">View Claims</a>
+          <a href="submit" class="sidebar_item">Submit a Claim</a>
+          <a href="reviews" class="sidebar_item">Review a Claim</a>
+          <a href="submit" class="sidebar_item">temp1</a>
+          <a href="submit" class="sidebar_item">temp1</a>
       </div>
       <div id="contentbox">
         <div className="container">
+        <legend>Submit a claim</legend>
         <form className="claim-form">
           <div className="form-group">
-            <label htmlFor="category">Category</label>
-            <input type="text" id="category" name="category"  />
+            <input class="entry_box" placeholder="Category" type="text" id="category" name="category"  />
           </div>
           <div className="form-group">
-            <label htmlFor="proof">Proof</label>
-            <input type="text" id="proof" name="proof" />
+            <input class="entry_box" placeholder="Amount" type="text" id="amount" name="amount"  />
           </div>
           <div className="form-group">
-            <label htmlFor="amount">Amount</label>
-            <input type="text" id="amount" name="amount"  />
+            <input class="entry_box" placeholder="Currency" type="text" id="currency" name="currency" />
           </div>
           <div className="form-group">
-            <label htmlFor="currency">Currency</label>
-            <input type="text" id="currency" name="currency" />
+            <textarea class="entry_box" placeholder="Notes" id="notes" name="notes"/>
           </div>
           <div className="form-group">
-            <label htmlFor="notes">Notes</label>
-            <textarea id="notes" name="notes"/>
+            <input class="entry_box" placeholder="Proof" type="text" id="proof" name="proof" />
           </div>
           <div className="form-actions">
             <button type="submit">Submit</button>
             <button type="button" >Clear</button>
           </div>
+          
         </form>
       </div>
       </div>

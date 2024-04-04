@@ -7,7 +7,7 @@ header {
 }
 
 body{
-    font-family:sans-serif;
+    font-family:'Roboto Mono', monospace;
     background-color: #1c1c1c;
     height: 100vh;
     margin: 0rem;

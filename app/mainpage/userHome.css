@@ -7,7 +7,7 @@ h1{
     color: white;
 }
 body {
-    font-family:sans-serif;
+    font-family:'Roboto Mono', monospace;
     background-color: #1c1c1c;
     display: flex;
     flex-direction: column;

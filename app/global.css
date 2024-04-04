@@ -21,4 +21,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+header
+{
+    background-color: #010205;
+}
+body
+{
+  font-family:'Roboto Mono', monospace;
+}

@@ -6,13 +6,11 @@ export default function mainlayout() {
     <>
       <header> <p class="header_item">FDM Expenses App</p>   <p class="header_item"><a href="#home">Sign out</a></p> </header>
       <div id="sidebar">
-      <ul>
-          <li>temp1</li>
-          <li>temp2</li>
-          <li>temp3</li>
-          <li>temp4</li>
-          <li>temp5</li>
-        </ul>
+          <a href="view" class="sidebar_item">View Claims</a>
+          <a href="submit" class="sidebar_item">Submit a Claim</a>
+          <a href="reviews" class="sidebar_item">Review a Claim</a>
+          <a href="submit" class="sidebar_item">temp1</a>
+          <a href="submit" class="sidebar_item">temp1</a>
       </div>
       <div id="contentbox">
             mainarea
