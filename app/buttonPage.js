@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './buttonPage.css';
+import './userHome.css';
 import Link from 'next/link';
 
 export default function ButtonPage() {
