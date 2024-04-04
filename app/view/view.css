@@ -14,6 +14,18 @@ a
     color: white; /* Text color for the links */
     text-decoration: none; /* No underline */
 }
+
+#view
+{
+  color: white; /* Text color for the links */
+  text-decoration: underline;
+}
+
+#view:hover
+{
+  background-color: #544343;
+}
+
 .header_item
 {
     margin-left: 1rem;
