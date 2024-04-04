@@ -1,0 +1,65 @@
+header
+{
+    background-color: #010205;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    font-family:'Roboto Mono', monospace;
+    grid-area: header;
+}
+a
+{
+    color: white; /* Text color for the links */
+    text-decoration: none; /* No underline */
+}
+.header_item
+{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+body{
+    font-family:'Roboto Mono', monospace;
+    background-color: #2c2c2c;
+    height: 100vh;
+    margin: 0rem;
+    display: grid;
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: 3.5rem auto;
+    grid-template-areas:
+    'header header header'
+    'sidebar contentbox contentbox'
+    ;
+}
+#sidebar
+{
+    grid-area: sidebar;
+    background-color: #1c1c1c;
+    height: 100%;
+    color: white;
+    display: flex;
+    padding-top: 1rem;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.sidebar_item
+{
+    border: solid white 1pt;
+    border-radius: 4pt;
+    margin: 0.4rem;
+    padding: 0.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.sidebar_item:hover
+{
+    background-color: #353535;
+    transition: 0.4s;
+}
+
+
+#contentbox
+{
+    grid-area: contentbox;
+}
