@@ -62,4 +62,10 @@ body{
 #contentbox
 {
     grid-area: contentbox;
+    text-align: center;
+}
+
+p
+{
+    text-align: center;
 }
