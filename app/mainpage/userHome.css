@@ -1,0 +1,69 @@
+button{
+    background-color: #959595;
+}
+
+h1{
+    background-color: #01100c;
+    color: white;
+}
+body {
+    font-family:sans-serif;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    justify-content: center;
+    /*height: 100vh;*/
+    margin: 0;
+}
+
+.header {
+    margin-top: 0px;
+    display: flex;
+    gap:50em;
+}
+
+.buttons-container {
+    padding-top: 10em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+button {
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#logout-button {
+    align-self: flex-start;
+}
+
+.layout{
+    display: flex;
+}
+
+#left-bar{
+    background-color: #959595;
+    padding-top: 1em;
+    padding:3em;
+    margin-right:5em;
+}
+
+.button-with-subtext {
+    /*position: relative;*/
+    overflow: hidden;
+}
+
+.button-with-subtext .subtext {
+    /*position: absolute;*/
+    /*padding-left: 0em;*/
+    /*bottom: -20px; Adjust as needed */
+    /*width: 100%;*/
+    font-size: 12px;
+    /*text-align: center;*/
+    /*list-style-type: disc;*/
+    /*padding-left: 20px;  Adjust as needed */
+    margin: 0;
+    display: none;
+}
