@@ -18,19 +18,19 @@ export default function Submit(){
         <legend>Submit a claim</legend>
         <form className="claim-form">
           <div className="form-group">
-            <input class="entry_box" placeholder="Category" type="text" id="category" name="category"  />
+            <input class="entry_box" placeholder="Category" type="text" id="category" name="category" required/>
           </div>
           <div className="form-group">
-            <input class="entry_box" placeholder="Amount" type="text" id="amount" name="amount"  />
+            <input class="entry_box" placeholder="Amount" type="text" id="amount" name="amount" required/>
           </div>
           <div className="form-group">
-            <input class="entry_box" placeholder="Currency" type="text" id="currency" name="currency" />
+            <input class="entry_box" placeholder="Currency" type="text" id="currency" name="currency" required/>
           </div>
           <div className="form-group">
-            <textarea class="entry_box" placeholder="Notes" id="notes" name="notes"/>
+            <textarea class="entry_box" placeholder="Notes" id="notes" name="notes" />
           </div>
           <div className="form-group">
-            <input class="entry_box" placeholder="Proof" type="text" id="proof" name="proof" />
+            <input class="entry_box" placeholder="Proof" type="text" id="proof" name="proof"/>
           </div>
           <div className="form-actions">
             <button type="submit">Submit</button>
