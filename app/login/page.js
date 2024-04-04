@@ -8,7 +8,7 @@ export default function Login() {
 
   return (
     <>
-    <header> <p class="header_item">FDM Expenses App</p>   <p class="header_item"><a href="#home">Sign out</a></p> </header>
+    <header> <p class="header_item">FDM Expenses App</p></header>
       
     <form method="GET" action="">
           <legend>Login</legend>
