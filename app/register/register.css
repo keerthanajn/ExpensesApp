@@ -93,9 +93,9 @@ fieldset
 }
 .register-box {
     margin: 15px;
-    padding: 20px;
+    padding: 15px;
     background-color: #1c1c1c;
-    border-radius: 15px;
+    border-radius: 10px;
 }
   
 /* Apply styles to the form */
