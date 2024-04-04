@@ -62,9 +62,9 @@ body{
 #contentbox
 {
     grid-area: contentbox;
-    margin: 5%;
+    margin: 8%;
     display: grid;
-    grid-template-rows: 30% 30% 40%;
+    grid-template-rows: 30% 30% 30%;
     grid-template-columns: 30% 30% 30%;
     color: white;
     grid-template-areas:
@@ -115,3 +115,10 @@ body{
   grid-area: job_position;
   background-color: #1c1c1c;
 }
+@media only screen and (max-width: 1000px) {
+    #contentbox{
+        display: flex;
+        flex-direction: column;
+        margin: 3%;
+    }
+  }

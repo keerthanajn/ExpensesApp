@@ -15,7 +15,12 @@ export default function mainlayout() {
         <a href="profile" class="sidebar_item">Profile</a>
       </div>
       <div id="contentbox">
-            mainarea
+      <h1>Report issue</h1>
+      <form>
+          <p id="claimtext">text from claim</p>
+          <button id="accept_butto">Accept</button>
+          <button id="deny_butto">Deny</button>
+        </form>
       </div>
     </>
   )
