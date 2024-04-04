@@ -92,3 +92,7 @@ padding: 0;
 #rejected-claims li {
   background-color: #f2dede;
 }
+
+a {
+  text-decoration: underline;
+}
