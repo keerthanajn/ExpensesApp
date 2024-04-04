@@ -1,7 +1,7 @@
 import React from 'react';
 import './review.css';
 
-export default function mainlayout() {
+export default function Review() {
   return (
     <>
       <header> <p><a href="mainpage" class="header_item">FDM Expenses App</a></p>   <p href="login" class="header_item"><a href="login">Sign out</a></p> </header>
@@ -15,11 +15,13 @@ export default function mainlayout() {
         <a href="profile" class="sidebar_item">Profile</a>
       </div>
       <div id="contentbox">
-      <h1>Report issue</h1>
+      <h1>Review Claim</h1>
       <form>
-          <p id="claimtext">text from claim</p>
-          <button id="accept_butto">Accept</button>
-          <button id="deny_butto">Deny</button>
+          <p id="claimtext">Claim info</p>
+          <div id="button_container">
+            <button id="accept_button">Accept</button>
+            <button id="deny_button">Deny</button>
+          </div>
         </form>
       </div>
     </>

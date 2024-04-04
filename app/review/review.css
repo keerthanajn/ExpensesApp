@@ -67,15 +67,43 @@ h1
 #contentbox
 {
     grid-area: contentbox;
+}
+form
+{
     margin: 10%;
     background-color:#1c1c1c;
+    border-radius: 10px;
+    padding: 1rem;
+}
+#button_container
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 #claimtext
 {
     text-align: center;
     background-color: #353535;
     padding: 10%;
+    height: 10rem;
     margin: 5%;
     border-radius: 10px;
     color: white;
+}
+button
+{
+    margin: 0.3rem;
+    border: transparent;
+    background-color: rgb(213, 208, 208, 0.4);
+    border-radius: 4px;
+    color: white;
+    height: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover
+{
+    background-color: rgb(165, 165, 165);
+    transition: 0.6s;
 }
