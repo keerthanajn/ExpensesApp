@@ -16,14 +16,13 @@ export default function Register() {
           <a href="profile" class="sidebar_item">Profile</a>
       </div>
       <div id="contentbox">
+        <h1>Register</h1>
       <div className="register-box">
         <form id="form" name="register-form" method="post" action="">
           <fieldset>
-            <section>   
-            <hgroup>
-              <h2>Register a new staff</h2><br></br>
-            </hgroup>
-            </section>
+            
+              <legend>Register a new staff</legend><br></br>
+            
             <section>
               <label htmlFor="name">Full Name:</label>
               <input type="text" id="name" name="name" />

@@ -36,6 +36,7 @@ body{
 {
     grid-area: sidebar;
     background-color: #1c1c1c;
+    font-family:'Roboto Mono', monospace;
     height: 100%;
     color: white;
     display: flex;
@@ -58,28 +59,43 @@ body{
     transition: 0.4s;
 }
 
-
 #contentbox
 {
     grid-area: contentbox;
 }
 
 body{
-    font-family:sans-serif;
+    font-family:'Roboto Mono', monospace;
     background-color: #2c2c2c;
     color: rgb(50, 49, 49); /* Text color */
     height: 100vh;
     margin: 0rem;
 }
+h1
+{
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+legend
+{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
 fieldset
 {
-    background-color: #1c1c1c;
-    border-radius: 15px;
     border: none;
+    border: solid #353535 1.5pt;
 }
 .register-box {
     margin: 15px;
     padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 15px;
 }
   
 /* Apply styles to the form */
@@ -94,6 +110,7 @@ label {
     display: block;
     margin-bottom: 5px;
     color: white;
+    font-weight: bold;
 }
   
 /* Apply styles to form inputs */
@@ -110,10 +127,6 @@ label {
     color: white;
     font-size: 1rem;
     border-radius: 4px;
-}
-h2
-{
-    color: white;
 }
 select {
     width: 20%;

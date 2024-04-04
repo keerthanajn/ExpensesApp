@@ -71,8 +71,8 @@ export default function ButtonPage() {
           <a href="view" class="sidebar_item">View Claims</a>
           <a href="submit" class="sidebar_item">Submit a Claim</a>
           <a href="reviews" class="sidebar_item">Review a Claim</a>
-          <a href="" class="sidebar_item">temp1</a>
-          <a href="Profile" class="sidebar_item">Profile</a>
+          <a href="register" class="sidebar_item">Register an account</a>
+          <a href="profile" class="sidebar_item">Profile</a>
       </div>
       <div id="contentbox">
             <h1 id="top_text">Welcome back *NAME*</h1>
