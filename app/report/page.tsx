@@ -4,7 +4,7 @@ import "../register/register.css";
 export default function Reviews() {
   return (
     <>
-      <header> <p><a href="mainpage" className="header_item">FDM Expenses App</a></p>   <p className="header_item"><a href="login">Sign out</a></p> </header>
+      <header> <p><a href="mainpage" className="header_item">FDM Expenses App</a></p>   <p ref="login" className="header_item"><a href="login">Sign out</a></p> </header>
       <div id="sidebar">
         <a href="mainpage" className="sidebar_item">Dashboard</a>
         <a href="view" className="sidebar_item">View Claims</a>
