@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Register() {
   return (
     <>
+<<<<<<< HEAD
       <header>
         {" "}
         <p>
@@ -40,6 +41,8 @@ export default function Register() {
           Profile
         </a>
       </div>
+=======
+>>>>>>> parent of 448e500 (Delete app/register/page.tsx -trying to use page.js)
       <div id="contentbox">
         <h1>Register</h1>
         <div className="register-box">
@@ -49,12 +52,24 @@ export default function Register() {
               <br></br>
 
               <section>
+<<<<<<< HEAD
                 <label htmlFor="name">Full Name:</label>
                 <input type="text" id="name" name="name" />
 
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" name="username" />
 
+=======
+                <label htmlFor="fName">First Name:</label>
+                <input type="text" id="name" name="name" />
+
+                <label htmlFor="lName">Last Name:</label>
+                <input type="text" id="username" name="username" />
+
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" />
+
+>>>>>>> parent of 448e500 (Delete app/register/page.tsx -trying to use page.js)
                 <label htmlFor="password">Password:</label>
                 <input
                   type="password"
@@ -63,6 +78,7 @@ export default function Register() {
                   minLength={8}
                 />
 
+<<<<<<< HEAD
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" />
 
@@ -74,6 +90,8 @@ export default function Register() {
                   minLength={12}
                 />
 
+=======
+>>>>>>> parent of 448e500 (Delete app/register/page.tsx -trying to use page.js)
                 <label htmlFor="title">Title:</label>
                 <select id="title" name="title">
                   <option value="1">Administrator</option>
@@ -86,7 +104,11 @@ export default function Register() {
 
               <div className="form-actions">
                 <button type="submit">Confirm</button>
+<<<<<<< HEAD
                 <button type="reset">Clear</button>
+=======
+                <button type="submit">Back</button>
+>>>>>>> parent of 448e500 (Delete app/register/page.tsx -trying to use page.js)
               </div>
             </fieldset>
           </form>
