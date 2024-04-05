@@ -16,6 +16,7 @@ const payTicketSchema = new mongoose.Schema({
   status: String,
   category: String,
   evidence: { data: Buffer, contentType: String },
+  notes: String,
   response: String,
 });
 

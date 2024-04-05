@@ -1,8 +1,17 @@
-"use client";
-import React from "react";
-import "./submit.css"; // Make sure to create an appropriate App.css file for styles
+import { useFormState, useFormStatus } from "react-dom";
 
-export default function Submit() {
+const initialState = { amount: 0 };
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button type="submit" aria-disabled={pending}>
+      Add
+    </button>
+  );
+}
+export default function SubmitForm() {
   return (
     <>
       <div id="contentbox">
@@ -94,8 +103,4 @@ export default function Submit() {
       </div>
     </>
   );
-}
-
-function handleSubmit(params) {
-  // console.log(params);
 }

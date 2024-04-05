@@ -5,6 +5,7 @@ interface PayTicket {
   status: "accepted" | "rejected" | "pending";
   category: string;
   evidence?: File;
+  notes?: string;
   response?: string;
 }
 interface User {
