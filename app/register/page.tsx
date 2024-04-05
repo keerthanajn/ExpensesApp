@@ -6,6 +6,16 @@ import Link from "next/link";
 export default function Register() {
   return (
     <>
+      <header> <p><a href="mainpage" className="header_item">FDM Expenses App</a></p>   <p className="header_item"><a href="login">Sign out</a></p> </header>
+      <div id="sidebar">
+        <a href="mainpage" className="sidebar_item">Dashboard</a>
+        <a href="view" className="sidebar_item">View Claims</a>
+        <a href="submit" className="sidebar_item">Submit a Claim</a>
+        <a href="report" className="sidebar_item">Report an Issue</a>
+        <a href="register" className="sidebar_item">Register an Account</a>
+        <a href="review" className="sidebar_item">Review a Claim</a>
+        <a href="profile" className="sidebar_item">Profile</a>
+      </div>
       <div id="contentbox">
         <h1>Register</h1>
         <div className="register-box">
@@ -44,7 +54,7 @@ export default function Register() {
 
               <div className="form-actions">
                 <button type="submit">Confirm</button>
-                <button type="submit">Back</button>
+                <button type="reset">Clear</button>
               </div>
             </fieldset>
           </form>
