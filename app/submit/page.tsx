@@ -46,13 +46,7 @@ export default function Submit() {
                 name="notes"
               />
             </div>
-            {/* <input
-                className="entry_box"
-                placeholder="Proof"
-                type="text"
-                id="proof"
-                name="proof"
-              /> */}
+
             <div>
               <div className="dropzone-container">
                 <label htmlFor="dropzone-file" className="dropzone-label">

@@ -9,7 +9,7 @@ export default function Sidebar() {
       <Link href="/submit" className="sidebar_item">
         Submit Claim
       </Link>
-      <Link href="/reviews" className="sidebar_item">
+      <Link href="/review" className="sidebar_item">
         Review Claim
       </Link>
       <Link href="/register" className="sidebar_item">

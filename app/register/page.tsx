@@ -15,11 +15,14 @@ export default function Register() {
               <br></br>
 
               <section>
-                <label htmlFor="name">Full Name:</label>
+                <label htmlFor="fName">First Name:</label>
                 <input type="text" id="name" name="name" />
 
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="lName">Last Name:</label>
                 <input type="text" id="username" name="username" />
+
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" />
 
                 <label htmlFor="password">Password:</label>
                 <input
@@ -27,17 +30,6 @@ export default function Register() {
                   id="password"
                   name="password"
                   minLength={8}
-                />
-
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" />
-
-                <label htmlFor="bio">Contact Number:</label>
-                <input
-                  type="number"
-                  id="contact"
-                  name="contact"
-                  minLength={12}
                 />
 
                 <label htmlFor="title">Title:</label>
