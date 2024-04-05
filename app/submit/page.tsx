@@ -4,6 +4,16 @@ import "./submit.css"; // Make sure to create an appropriate App.css file for st
 export default function Submit() {
   return (
     <>
+      <header> <p><a href="mainpage" className="header_item">FDM Expenses App</a></p>   <p className="header_item"><a href="login">Sign out</a></p> </header>
+      <div id="sidebar">
+        <a href="mainpage" className="sidebar_item">Dashboard</a>
+        <a href="view" className="sidebar_item">View Claims</a>
+        <a href="submit" className="sidebar_item">Submit a Claim</a>
+        <a href="report" className="sidebar_item">Report an Issue</a>
+        <a href="register" className="sidebar_item">Register an Account</a>
+        <a href="review" className="sidebar_item">Review a Claim</a>
+        <a href="profile" className="sidebar_item">Profile</a>
+      </div>
       <div id="contentbox">
         <div className="container">
           <legend>Submit a claim</legend>
