@@ -140,7 +140,7 @@ select {
     margin-top: 30px;
   }
   
-button[type="submit"],
+button[type="submit"],button[type="reset"],
 button#cancel {
     padding: 10px 20px;
     background-color: #293645; /* Primary button color */
@@ -151,7 +151,7 @@ button#cancel {
     margin-right: 10px;
   }
   
-  button[type="submit"]:hover,
+  button[type="submit"]:hover,button[type="reset"]:hover,
   button#cancel:hover {
     background-color: #0056b3; /* Lighter blue shade for hover effect */
   }
