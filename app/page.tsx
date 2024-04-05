@@ -1,11 +1,17 @@
+import { redirect } from "next/navigation";
 import "./global.css";
 import "./page.css";
 import {
   RegisterLink,
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function App() {
+export default async function App() {
+  const { isAuthenticated } = getKindeServerSession();
+  if (await isAuthenticated()) {
+    redirect("/mainpage");
+  }
   return (
     <div id="main_body">
       <div>

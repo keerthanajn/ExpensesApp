@@ -5,8 +5,6 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
 
-import App from "./page";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

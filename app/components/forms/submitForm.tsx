@@ -1,23 +1,28 @@
 import { useFormState, useFormStatus } from "react-dom";
+import { createTodo } from "./forms";
+import "./forms.css";
 
-const initialState = { amount: 0 };
+const initialState = {
+  message: "",
+};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
     <button type="submit" aria-disabled={pending}>
-      Add
+      Submit
     </button>
   );
 }
 export default function SubmitForm() {
+  const [state, formAction] = useFormState(createTodo, initialState);
   return (
     <>
       <div id="contentbox">
         <div className="container">
           <legend>Submit a claim</legend>
-          <form className="claim-form" onSubmit={handleSubmit}>
+          <form className="claim-form" action={formAction}>
             <div className="form-group">
               <input
                 className="entry_box"
@@ -93,9 +98,7 @@ export default function SubmitForm() {
               </div>
             </div>
             <div className="form-actions">
-              <button type="submit" formMethod="Post">
-                Submit
-              </button>
+              <SubmitButton />
               <button type="button">Clear</button>
             </div>
           </form>
