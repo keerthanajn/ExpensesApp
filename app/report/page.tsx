@@ -31,7 +31,7 @@ export default function Reviews() {
 
               <div className="form-actions">
                 <button type="submit">Confirm</button>
-                <button type="submit">Back</button>
+                <button type="reset">Clear</button>
               </div>
             </fieldset>
           </form>
