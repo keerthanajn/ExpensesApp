@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import "./userHome.css";
-import Link from "next/link";
-import Navbar from "../components/navbar";
-import Sidebar from "../components/sidebar";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export default function ButtonPage() {
+export default function MainPage() {
   //   // useEffect to handle event listeners when component mounts
   //   useEffect(() => {
   //     const handleLogoutClick = () => {

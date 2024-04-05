@@ -1,59 +1,51 @@
-h1
-{
-    margin-top: 12rem;
-    text-align: center;
-    font-size: 55px;
-    font-family: 'Roboto Mono', monospace;
+h1 {
+  margin-top: 12rem;
+  text-align: center;
+  font-size: 55px;
+  font-family: "Roboto Mono", monospace;
 }
-#login_section
-{
-    margin-top: 8rem;
-    width: 100%;
-    text-align: center;
+#login_section {
+  margin-top: 8rem;
+  width: 100%;
+  text-align: center;
 }
 
-html
-{
-    background-image: url(waves_image.jpg);
+html {
+  background-image: url(../public/waves_image.jpg);
 }
-body
-{
-    background: transparent;
+body {
+  background: transparent;
 }
 
-#sign_button
-{
-    width: 15rem;
-    height: 4rem;
-    font-size: 15px;
-    border-radius: 20pt;
-    border: rgb(255, 255, 255) solid 2pt;
-    color: white;
-    background-color: rgb(213, 208, 208, 0.4);
-    cursor: pointer;
+#sign_button {
+  width: 15rem;
+  height: 4rem;
+  font-size: 15px;
+  border-radius: 20pt;
+  border: rgb(255, 255, 255) solid 2pt;
+  color: white;
+  background-color: rgb(213, 208, 208, 0.4);
+  cursor: pointer;
 }
-#sign_button span
-{
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
+#sign_button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
 }
-#sign_button span:after
-{
-    content: '>';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -25px;
-    transition: 0.5s;
+#sign_button span:after {
+  content: ">";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
 }
-#sign_button:hover span
-{
-    padding-right: 25px;
+#sign_button:hover span {
+  padding-right: 25px;
 }
 #sign_button:hover span:after {
-    opacity: 1;
-    right: 0;
+  opacity: 1;
+  right: 0;
 }

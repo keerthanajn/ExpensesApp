@@ -14,10 +14,10 @@ export default function Profile() {
           >
             <fieldset>
               <legend>Personal Information</legend>
-              <label htmlFor="name">Full Name:</label>
+              <label htmlFor="fName">First Name:</label>
               <input type="text" id="name" name="name" />
 
-              <label htmlFor="bio">Contact Number:</label>
+              <label htmlFor="lName">Last Name:</label>
               <input type="number" id="contact" name="contact" minLength={12} />
 
               <label htmlFor="email">Email:</label>
