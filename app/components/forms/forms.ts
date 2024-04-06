@@ -1,35 +1,35 @@
 import { createPayTicket } from "../../DB/create";
+import { findUser } from "../../DB/find";
+// import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export async function createTodo(
-  prevState: {
-    message: string;
-  },
-  formData: FormData
+type ticketInputs = {
+  category: string;
+  amount: number;
+  notes: string;
+  currency: string;
+  evidence: File;
+};
+
+export default async function formToTicket(
+  { amount, currency, category, evidence, notes }: ticketInputs,
+  email: string
 ) {
-  const newTicket = {
-    amount: formData.get("amount"),
-    currency: formData.get("currency"),
-    dateMade: new Date(),
-    status: "pending",
-    category: formData.get("category"),
-    evidence: formData.get("evidence"),
-  };
+  if (!!amount) {
+    const newPayTicket: PayTicket = {
+      amount: amount,
+      currency: currency,
+      dateMade: new Date(),
+      status: "pending",
+      category: category,
+      notes: notes,
+    };
+    createPayTicket(newPayTicket);
 
-  try {
-    createPayTicket(newTicket);
-    console.log("Works");
-  } catch (error) {
-    return { message: "Failed to create todo" };
+    console.log("works");
+
+    const user = await findUser(email);
+    user.payTickets.push(newPayTicket);
+
+    console.log("everything works");
   }
-  //   try {
-  //     await sql`
-  //       INSERT INTO todos (text)
-  //       VALUES (${data.todo})
-  //     `;
-
-  //     revalidatePath("/");
-  //     return { message: `Added todo ${data.todo}` };
-  //   } catch (e) {
-  //     return { message: "Failed to create todo" };
-  //   }
 }

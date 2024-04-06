@@ -1,28 +1,54 @@
-import { useFormState, useFormStatus } from "react-dom";
-import { createTodo } from "./forms";
 import "./forms.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
+import FileInput from "./fileInput";
+import formToTicket from "./forms";
+import { revalidatePath } from "next/cache";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import axios from "axios";
+// import { revalidatePath } from "next/cache";
 
-const initialState = {
-  message: "",
+type ticketInputs = {
+  category: string;
+  amount: number;
+  notes: string;
+  currency: string;
+  evidence: File;
 };
 
 function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <button type="submit" aria-disabled={pending}>
-      Submit
-    </button>
-  );
+  return <button type="submit">Submit</button>;
 }
+
 export default function SubmitForm() {
-  const [state, formAction] = useFormState(createTodo, initialState);
+  const { user } = useKindeBrowserClient();
+  const currentUser = user;
+  const form = useForm<ticketInputs>();
+  const { register, handleSubmit, formState, control } = form;
+
+  const onSubmit: SubmitHandler<ticketInputs> = async (
+    ticket: ticketInputs
+  ) => {
+    const ticketPost = {
+      amount: ticket.amount,
+      currency: ticket.currency,
+      category: ticket.category,
+      notes: ticket.notes,
+      evidence: ticket.evidence[0],
+    };
+    const response = await axios.post("api/forms", ticketPost, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    console.log(ticketPost, ticket, response.data);
+  };
+
   return (
     <>
       <div id="contentbox">
         <div className="container">
           <legend>Submit a claim</legend>
-          <form className="claim-form" action={formAction}>
+          <form className="claim-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <input
                 className="entry_box"
@@ -31,16 +57,18 @@ export default function SubmitForm() {
                 id="category"
                 name="category"
                 required
+                {...register("category")}
               />
             </div>
             <div className="form-group">
               <input
                 className="entry_box"
                 placeholder="Amount"
-                type="text"
+                type="number"
                 id="amount"
                 name="amount"
                 required
+                {...register("amount")}
               />
             </div>
             <div className="form-group">
@@ -51,6 +79,7 @@ export default function SubmitForm() {
                 id="currency"
                 name="currency"
                 required
+                {...register("currency")}
               />
             </div>
             <div className="form-group">
@@ -59,48 +88,17 @@ export default function SubmitForm() {
                 placeholder="Notes"
                 id="notes"
                 name="notes"
+                {...register("notes")}
               />
             </div>
 
-            <div>
-              <div className="dropzone-container">
-                <label htmlFor="dropzone-file" className="dropzone-label">
-                  <div className="dropzone-content">
-                    <svg
-                      className="dropzone-icon"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                      />
-                    </svg>
-                    <p className="dropzone-text">
-                      <span>Supporting evidence</span>
-                    </p>
-                    <p className="dropzone-text">
-                      Click to upload or drag and drop
-                    </p>
-                    <p className="dropzone-hint">(JPG, JPEG, PNG, PDF)</p>
-                  </div>
-                  <input
-                    id="dropzone-file"
-                    type="file"
-                    className="dropzone-input hidden"
-                  />
-                </label>
-              </div>
-            </div>
+            <FileInput register={register} />
+
             <div className="form-actions">
               <SubmitButton />
               <button type="button">Clear</button>
             </div>
+            <DevTool control={control} />
           </form>
         </div>
       </div>

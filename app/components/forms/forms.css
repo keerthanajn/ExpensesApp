@@ -125,6 +125,16 @@ nav ul li a {
   border-color: gray;
   background-color: #1c1c1c;
 }
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5em; /* Space between label and input */
+  border-radius: 5px; /* Rounded borders for inputs */
+  color: white;
+  border-color: gray;
+  background-color: #1c1c1c;
+}
 .form-actions {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -163,6 +173,12 @@ button:hover {
   border: 1px solid blue; /* Blue border as specified */
   padding: 10px; /* Padding inside the border */
   margin-top: 1em; /* Space above the bordered area */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .dropzone-container {
