@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Register() {
   return (
     <>
+    {/*
       <div id="sidebar">
         <a href="mainpage" className="sidebar_item">
           Dashboard
@@ -29,6 +30,7 @@ export default function Register() {
           Profile
         </a>
       </div>
+  */}
       <div id="contentbox">
         <h1>Register</h1>
         <div className="register-box">
