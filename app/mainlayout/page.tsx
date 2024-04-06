@@ -20,6 +20,12 @@ export default function mainlayout() {
         <a href="profile" className="sidebar_item">
           Profile
         </a>
+        <a href="viewIssues" className="sidebar_item">
+          View Issues
+        </a>
+        <a href="reviewIssue" className="sidebar_item">
+          Review an Issue
+        </a>
       </div>
       <div id="contentbox">mainarea</div>
     </>
