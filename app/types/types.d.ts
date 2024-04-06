@@ -4,7 +4,7 @@ interface PayTicket {
   dateMade: date;
   status: "accepted" | "rejected" | "pending";
   category: string;
-  evidence?: File;
+  evidence?: { data: Buffer; contentType: String };
   notes?: string;
   response?: string;
 }

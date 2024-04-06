@@ -1,7 +1,10 @@
+import { HydratedDocument } from "mongoose";
 import { Employee, LineManager, User } from "./main";
 import _ from "lodash";
 
-export async function findEmployee({ email }: User): Promise<Employee | null> {
+export async function findEmployee({
+  email,
+}: User): Promise<HydratedDocument<Employee | null>> {
   if (!email) {
     console.log("no email");
     return null;
@@ -11,7 +14,7 @@ export async function findEmployee({ email }: User): Promise<Employee | null> {
 }
 export async function findLineManager({
   email,
-}: User): Promise<LineManager | null> {
+}: User): Promise<HydratedDocument<LineManager | null>> {
   if (!email) {
     console.log("no email");
     return null;
@@ -21,7 +24,7 @@ export async function findLineManager({
 }
 export async function findUser(
   email: string
-): Promise<Employee | LineManager | null> {
+): Promise<HydratedDocument<Employee | LineManager | null>> {
   const foundUser: User | null = await User.findOne({
     email: _.toLower(email),
   });

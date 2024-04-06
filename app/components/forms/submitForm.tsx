@@ -1,19 +1,16 @@
 import "./forms.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+// import { DevTool } from "@hookform/devtools";
 import FileInput from "./fileInput";
-import formToTicket from "./forms";
-import { revalidatePath } from "next/cache";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
-// import { revalidatePath } from "next/cache";
 
 type ticketInputs = {
   category: string;
   amount: number;
   notes: string;
   currency: string;
-  evidence: File;
+  evidence: FileList;
 };
 
 function SubmitButton() {
@@ -30,17 +27,23 @@ export default function SubmitForm() {
     ticket: ticketInputs
   ) => {
     const ticketPost = {
+      userEmail: currentUser.email,
       amount: ticket.amount,
       currency: ticket.currency,
       category: ticket.category,
       notes: ticket.notes,
       evidence: ticket.evidence[0],
     };
-    const response = await axios.post("api/forms", ticketPost, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
 
-    console.log(ticketPost, ticket, response.data);
+    try {
+      const response = await axios.post("api/forms", ticketPost, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      form.reset();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -98,7 +101,7 @@ export default function SubmitForm() {
               <SubmitButton />
               <button type="button">Clear</button>
             </div>
-            <DevTool control={control} />
+            {/* <DevTool control={control} /> */}
           </form>
         </div>
       </div>
