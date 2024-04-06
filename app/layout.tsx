@@ -4,6 +4,7 @@ import "./global.css";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
+import { findUser } from "./DB/find";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,15 +18,17 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { isAuthenticated } = getKindeServerSession();
-  await isAuthenticated();
+  const { isAuthenticated, getUser } = getKindeServerSession();
+  const user = await getUser();
+  const currentUser = user ? await findUser(user.email) : null;
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        {(await isAuthenticated()) && (
+        {currentUser && (
           <>
             <Navbar />
-            <Sidebar />
+            <Sidebar status={currentUser.userDetails.userStatus} />
           </>
         )}
         {children}

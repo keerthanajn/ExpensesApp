@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Sidebar() {
+export default function Sidebar({ status }) {
   return (
     <div id="sidebar">
-      <Link href = "/mainpage" className = "sidebar_item">
+      <Link href="/mainpage" className="sidebar_item">
         Dashboard
       </Link>
       <Link href="/profile" className="sidebar_item">
@@ -15,15 +15,21 @@ export default function Sidebar() {
       <Link href="/submit" className="sidebar_item">
         Submit Claim
       </Link>
-      {/*Line Manager Function Only*/}
-      <Link href="/review" className="sidebar_item">
-        Claim Management
-      </Link>
-      {/*Admin Function Only*/}
-      <Link href="/register" className="sidebar_item">
-        Register Account
-      </Link>
-      <Link href = "/report" className = "sidebar_item">
+      {status == "lineManager" ? (
+        //  Line Manager Function Only
+        <Link href="/review" className="sidebar_item">
+          Claim Management
+        </Link>
+      ) : (
+        status == "admin" && (
+          // Admin Function Only
+          <Link href="/register" className="sidebar_item">
+            Register Account
+          </Link>
+        )
+      )}
+
+      <Link href="/report" className="sidebar_item">
         Help
       </Link>
     </div>
