@@ -1,7 +1,11 @@
 import React from "react";
 import "./review.css";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export default function Review() {
+export default async function Review() {
+  const { user } = useKindeBrowserClient();
+  const currentUser = user;
+
   return (
     <>
       <h1>Review Claim</h1>
