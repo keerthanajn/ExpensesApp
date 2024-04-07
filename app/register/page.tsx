@@ -1,8 +1,6 @@
 "use client";
 import "./register.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
 
 type newUserData = {
@@ -91,8 +89,8 @@ export default function Register() {
 
                   <label htmlFor="status">Status:</label>
 
-                  <select {...register("status", { required: true })}>
-                    <option value="">Select a Title</option>
+                  <select className="status" required {...register("status")}>
+                    <option disabled>Select Employee Status</option>
                     <option value="employee">Employee</option>
                     <option value="lineManager">Line Managers</option>
                     <option value="iTStaff">IT Support Staff</option>
@@ -108,7 +106,6 @@ export default function Register() {
               </div>
             </fieldset>
           </form>
-          {/* <DevTool control={control} /> */}
         </div>
       </div>
     </>
