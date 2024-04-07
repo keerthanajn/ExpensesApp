@@ -6,8 +6,8 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
 
 type newUserData = {
-  fName: string;
-  lName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   lMEmail: string;
   status: "employee" | "lineManager" | "iTStaff" | "finance" | "admin";
@@ -19,8 +19,8 @@ export default function Register() {
 
   const onSubmit: SubmitHandler<newUserData> = async (newuser: newUserData) => {
     const UserPost = {
-      fName: newuser.fName,
-      lName: newuser.lName,
+      firstName: newuser.firstName,
+      lastName: newuser.lastName,
       email: newuser.email,
       lMEmail: newuser.lMEmail,
       status: newuser.status,
@@ -33,7 +33,7 @@ export default function Register() {
 
       form.reset();
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 
@@ -53,22 +53,22 @@ export default function Register() {
 
               <section>
                 <>
-                  <label htmlFor="fName">First Name:</label>
+                  <label htmlFor="firstName">First Name:</label>
                   <input
                     type="text"
-                    id="fName"
-                    name="fName"
+                    id="firstName"
+                    name="firstName"
                     required
-                    {...register("fName")}
+                    {...register("firstName")}
                   />
 
-                  <label htmlFor="lName">Last Name:</label>
+                  <label htmlFor="lastName">Last Name:</label>
                   <input
                     type="text"
-                    id="lName"
-                    name="lName"
+                    id="lastName"
+                    name="lastName"
                     required
-                    {...register("lName")}
+                    {...register("lastName")}
                   />
 
                   <label htmlFor="email">Email:</label>
