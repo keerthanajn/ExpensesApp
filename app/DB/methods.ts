@@ -2,7 +2,7 @@ import { forEach } from "lodash";
 import { HydratedDocument } from "mongoose";
 import { findUser } from "./find";
 
-export function ticketfilter({ payTickets }: Employee | LineManager) {
+export function ticketfilter({ payTickets }: Employee) {
   let filteredTickets: filteredTickets = {
     accepted: [],
     rejected: [],
@@ -17,13 +17,13 @@ export function ticketfilter({ payTickets }: Employee | LineManager) {
 
 export async function lmTicketFilter({
   employees,
-}: HydratedDocument<LineManager>) {
+}: HydratedDocument<Employee>) {
   let lmTicketFilter: {
-    employee: HydratedDocument<Employee | LineManager>;
+    employee: HydratedDocument<Employee>;
     payTickets: PayTicket[];
   }[] = [];
 
-  employees.forEach(async ({ userDetails: { email } }) => {
+  employees.forEach(async ({ email }) => {
     let myPayTickets = [];
     const myEmployee = await findUser(email);
 

@@ -1,8 +1,6 @@
-import React from "react";
 import "./view.css";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { findUser } from "../DB/find";
-import Link from "next/link";
 import { ticketfilter } from "../DB/methods";
 import { ListItemTr } from "../components/listItem";
 

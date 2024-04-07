@@ -23,7 +23,10 @@ async function formToTicket(ticketData: FormData) {
   };
 
   if (ticketData) {
+    const currentUser = await findUser(String(ticketData.get("userEmail")));
+
     const newPayTicket: PayTicket = {
+      user: currentUser.userDetails,
       amount: Number(ticketData.get("amount")),
       currency: String(ticketData.get("currency")),
       dateMade: new Date(),
@@ -32,8 +35,6 @@ async function formToTicket(ticketData: FormData) {
       notes: String(ticketData.get("notes")),
       evidence: myEvidence,
     };
-
-    const currentUser = await findUser(String(ticketData.get("userEmail")));
 
     createPayTicket(newPayTicket);
     currentUser.payTickets.push(newPayTicket);

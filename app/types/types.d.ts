@@ -1,32 +1,35 @@
+interface User {
+  email: string;
+  firstName: string;
+  lastName: string;
+  userStatus: "employee" | "lineManager" | "admin" | "iTSupport";
+}
+
 interface PayTicket {
+  user: User;
   amount: number;
   currency: string;
-  dateMade: date;
+  dateMade: Date;
   status: "accepted" | "rejected" | "pending";
   category: string;
   evidence?: { data: Buffer; contentType: String };
   notes?: string;
   response?: string;
 }
-interface User {
-  email: string;
-  firstName: string;
-  lastName: string;
-  userStatus: "employee" | "lineManager" | "admin";
-}
-
 interface Employee {
   userDetails: User;
   lineManager: User;
+  employees?: User[];
   payTickets: PayTicket[];
 }
 
-interface LineManager {
-  userDetails: User;
-  employees: Employee[];
-  payTickets: PayTicket[];
+interface ErrorTicket {
+  title: string;
+  details: string;
+  resolved: boolean;
+  dateMade: Date;
+  user?: User;
 }
-
 interface filteredTickets {
   accepted: PayTicket[];
   rejected: PayTicket[];

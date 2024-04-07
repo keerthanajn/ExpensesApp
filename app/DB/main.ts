@@ -6,21 +6,10 @@ try {
     mongoose.connect(uri);
   }
 } catch (error) {
-  console.error();
+  console.error("Database connect issues");
 }
 
-const payTicketSchema = new mongoose.Schema({
-  amount: Number,
-  currency: String,
-  dateMade: Date,
-  status: String,
-  category: String,
-  evidence: { data: Buffer, contentType: String },
-  notes: String,
-  response: String,
-});
-
-const userSchema: Schema = new mongoose.Schema({
+const userSchema: Schema<User> = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -32,28 +21,40 @@ const userSchema: Schema = new mongoose.Schema({
   userStatus: String,
 });
 
-const employeeSchema: Schema = new mongoose.Schema({
+const payTicketSchema: Schema<PayTicket> = new mongoose.Schema({
+  user: userSchema,
+  amount: Number,
+  currency: String,
+  dateMade: Date,
+  status: String,
+  category: String,
+  evidence: { data: Buffer, contentType: String },
+  notes: String,
+  response: String,
+});
+
+const employeeSchema: Schema<Employee> = new mongoose.Schema({
   userDetails: userSchema,
   lineManager: userSchema,
+  employees: [userSchema],
   payTickets: [payTicketSchema],
 });
 
-const lineManagerSchema: Schema = new mongoose.Schema({
-  userDetails: userSchema,
-  employees: [employeeSchema],
-  payTickets: [payTicketSchema],
+const errorTicketSchema: Schema<ErrorTicket> = new mongoose.Schema({
+  title: String,
+  details: String,
+  resolved: Boolean,
+  dateMade: Date,
+  user: userSchema,
 });
 
-function workingModel(field: string, Schema: Schema): Model<any> {
+function workingModel(field: string, Schema: Schema<any>): Model<any> {
   return mongoose.models[field] || mongoose.model(field, Schema);
 }
 
 const PayTicket: Model<PayTicket> = workingModel("PayTicket", payTicketSchema);
 const User: Model<User> = workingModel("User", userSchema);
 const Employee: Model<Employee> = workingModel("Employee", employeeSchema);
-const LineManager: Model<LineManager> = workingModel(
-  "Line Manager",
-  lineManagerSchema
-);
+const ErrorTicket = workingModel("ErrorTicket", errorTicketSchema);
 
-export { PayTicket, User, Employee, LineManager };
+export { PayTicket, User, Employee, ErrorTicket };
