@@ -1,6 +1,6 @@
-import React from "react";
 import "./review.css";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import EgTable from "../components/egTable";
 
 export default async function Review() {
   const { user } = useKindeBrowserClient();
@@ -9,13 +9,14 @@ export default async function Review() {
   return (
     <>
       <h1>Review Claim</h1>
-      <form>
+      {/* <form>
         <p id="claimtext">Claim info</p>
         <div id="button_container">
           <button id="accept_button">Accept</button>
           <button id="deny_button">Deny</button>
         </div>
-      </form>
+      </form> */}
+      <EgTable />
     </>
   );
 }

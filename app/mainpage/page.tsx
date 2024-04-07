@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+
 import "./userHome.css";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 

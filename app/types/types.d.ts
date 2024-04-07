@@ -2,9 +2,8 @@ interface User {
   email: string;
   firstName: string;
   lastName: string;
-  userStatus: "employee" | "lineManager" | "admin" | "iTSupport";
+  userStatus: "employee" | "lineManager" | "admin" | "iTSupport" | "finance";
 }
-
 interface PayTicket {
   user: User;
   amount: number;

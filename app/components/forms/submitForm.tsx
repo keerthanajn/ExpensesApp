@@ -5,23 +5,11 @@ import FileInput from "./fileInput";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
 
-type ticketInputs = {
-  category: string;
-  amount: number;
-  notes: string;
-  currency: string;
-  evidence: FileList;
-};
-
-function SubmitButton() {
-  return <button type="submit">Submit</button>;
-}
-
 export default function SubmitForm() {
   const { user } = useKindeBrowserClient();
   const currentUser = user;
   const form = useForm<ticketInputs>();
-  const { register, handleSubmit, formState, control } = form;
+  const { register, handleSubmit } = form;
 
   const onSubmit: SubmitHandler<ticketInputs> = async (
     ticket: ticketInputs
@@ -99,12 +87,36 @@ export default function SubmitForm() {
 
             <div className="form-actions">
               <SubmitButton />
-              <button type="button">Clear</button>
+              <ClearButton form={form} />
             </div>
-            {/* <DevTool control={control} /> */}
           </form>
+          {/* <DevTool control={control} /> */}
         </div>
       </div>
     </>
+  );
+}
+
+type ticketInputs = {
+  category: string;
+  amount: number;
+  notes: string;
+  currency: string;
+  evidence: FileList;
+};
+
+function SubmitButton() {
+  return <button type="submit">Submit</button>;
+}
+function ClearButton({ form }) {
+  return (
+    <button
+      type="button"
+      onClick={(event) => {
+        form.reset();
+      }}
+    >
+      Clear
+    </button>
   );
 }
