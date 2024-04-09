@@ -22,16 +22,21 @@ export async function lmTicketFilter({
     payTickets: PayTicket[];
   }[] = [];
 
-  employees.forEach(async ({ email }) => {
-    let myPayTickets = [];
-    const myEmployee = await findUser(email);
+  for (let i = 0; i < employees.length; i++) {
+    const myEmployee = await findUser(employees[i].email);
 
     if (myEmployee) {
-      lmTicketFilter.push({
+      const lmTicketFilterItem = {
         employee: myEmployee,
         payTickets: ticketfilter(myEmployee).pending,
-      });
+      };
+
+      if (lmTicketFilterItem.payTickets) {
+        lmTicketFilter.push(lmTicketFilterItem);
+      }
     }
-    return lmTicketFilter;
-  });
+  }
+  // console.log("filter", lmTicketFilter);
+
+  return lmTicketFilter;
 }

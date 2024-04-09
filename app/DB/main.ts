@@ -22,6 +22,7 @@ const userSchema: Schema<User> = new mongoose.Schema({
 });
 
 const payTicketSchema: Schema<PayTicket> = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   user: userSchema,
   amount: Number,
   currency: String,
@@ -55,6 +56,9 @@ function workingModel(field: string, Schema: Schema<any>): Model<any> {
 const PayTicket: Model<PayTicket> = workingModel("PayTicket", payTicketSchema);
 const User: Model<User> = workingModel("User", userSchema);
 const Employee: Model<Employee> = workingModel("Employee", employeeSchema);
-const ErrorTicket = workingModel("ErrorTicket", errorTicketSchema);
+const ErrorTicket: Model<ErrorTicket> = workingModel(
+  "ErrorTicket",
+  errorTicketSchema
+);
 
 export { PayTicket, User, Employee, ErrorTicket };

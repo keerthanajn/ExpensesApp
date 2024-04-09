@@ -1,22 +1,18 @@
 import "./review.css";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
-import EgTable from "../components/egTable";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { findUser } from "../DB/find";
+import { lmTicketFilter } from "../DB/methods";
+import { LmTicketList } from "../components/listItem";
 
 export default async function Review() {
-  const { user } = useKindeBrowserClient();
-  const currentUser = user;
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+  const currentUser = await findUser(user.email);
+  const ticketList = await lmTicketFilter(currentUser);
 
   return (
     <>
-      <h1>Review Claim</h1>
-      {/* <form>
-        <p id="claimtext">Claim info</p>
-        <div id="button_container">
-          <button id="accept_button">Accept</button>
-          <button id="deny_button">Deny</button>
-        </div>
-      </form> */}
-      <EgTable />
+      <LmTicketList ticketList={ticketList} />
     </>
   );
 }

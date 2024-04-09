@@ -5,6 +5,7 @@ interface User {
   userStatus: "employee" | "lineManager" | "admin" | "iTSupport" | "finance";
 }
 interface PayTicket {
+  _id: OBjectID;
   user: User;
   amount: number;
   currency: string;
@@ -34,3 +35,8 @@ interface filteredTickets {
   rejected: PayTicket[];
   pending: PayTicket[];
 }
+
+type lmTicketList = {
+  employee: HydratedDocument<Employee>;
+  payTickets: PayTicket[];
+}[];

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createPayTicket } from "../../DB/create";
 import { findUser } from "../../DB/find";
+import mongoose from "mongoose";
 
 export async function POST(req: Request) {
   const ticketData = await req.formData();
@@ -26,6 +27,7 @@ async function formToTicket(ticketData: FormData) {
     const currentUser = await findUser(String(ticketData.get("userEmail")));
 
     const newPayTicket: PayTicket = {
+      _id: new mongoose.mongo.ObjectId(),
       user: currentUser.userDetails,
       amount: Number(ticketData.get("amount")),
       currency: String(ticketData.get("currency")),
