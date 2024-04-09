@@ -38,57 +38,61 @@ export default function SubmitForm() {
     <>
       <div id="contentbox">
         <div className="container">
-          <legend>Submit a claim</legend>
           <form className="claim-form" onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-group">
-              <input
-                className="entry_box"
-                placeholder="Category"
-                type="text"
-                id="category"
-                name="category"
-                required
-                {...register("category")}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="entry_box"
-                placeholder="Amount"
-                type="number"
-                id="amount"
-                name="amount"
-                required
-                {...register("amount")}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="entry_box"
-                placeholder="Currency"
-                type="text"
-                id="currency"
-                name="currency"
-                required
-                {...register("currency")}
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                className="entry_box"
-                placeholder="Notes"
-                id="notes"
-                name="notes"
-                {...register("notes")}
-              />
-            </div>
+            <fieldset>
+              <legend>Submit a claim</legend>
+                <div className="form-group">
+                  <label htmlFor="Category">Category:</label>
+                    <input
+                      className="entry_box"
+                      type="text"
+                      id="category"
+                      name="category"
+                      required
+                      {...register("category")}
+                    />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Amount">Amount:</label>
+                  <input
+                    className="entry_box"
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    required
+                    {...register("amount")}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Currency">Currency:</label>
+                    <input
+                      className="entry_box"
+                      type="text"
+                      id="currency"
+                      name="currency"
+                      required
+                      {...register("currency")}
+                    />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Notes">Notes:</label>
+                    <textarea
+                      className="entry_box"
+                      id="notes"
+                      name="notes"
+                      {...register("notes")}
+                    />
+                </div>
+                <div>
+                  <label htmlFor="File">Drop the receipt below:</label>
+                    <FileInput register={register} />
+                </div>
 
-            <FileInput register={register} />
-
-            <div className="form-actions">
-              <SubmitButton />
-              <ClearButton form={form} />
-            </div>
+                <div className="form-actions">
+                  <SubmitButton />
+                  <ClearButton form={form} />
+                </div>
+              </fieldset>
           </form>
           {/* <DevTool control={control} /> */}
         </div>

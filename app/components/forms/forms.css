@@ -9,14 +9,17 @@ header {
   font-family: "Roboto Mono", monospace;
   grid-area: header;
 }
+
 a {
   color: white; /* Text color for the links */
   text-decoration: none; /* No underline */
 }
+
 .header_item {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
 body {
   font-family: "Roboto Mono", monospace;
   background-color: #2c2c2c;
@@ -30,6 +33,7 @@ body {
     "header header header"
     "sidebar contentbox contentbox";
 }
+
 #sidebar {
   grid-area: sidebar;
   background-color: #1c1c1c;
@@ -40,6 +44,7 @@ body {
   flex-direction: column;
   gap: 0.4rem;
 }
+
 .sidebar_item {
   border: solid white 1pt;
   border-radius: 4pt;
@@ -55,17 +60,24 @@ body {
 #contentbox {
   grid-area: contentbox;
 }
+
+.claim-form{
+  padding: 15px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 legend {
   grid-area: legend;
   text-align: center;
   font-size: 2em;
   color: rgb(255, 255, 255);
   font-family: "Roboto Mono", monospace;
-  margin-bottom: 1rem;
   font-weight: bold;
-  margin-bottom: 4rem;
   width: 100%;
 }
+
 /* Container for the entire form area */
 .container {
   background-color: transparent; /* Light blue background color for the container */
@@ -74,30 +86,12 @@ legend {
   margin: 2rem;
 }
 
-#notes {
-  resize: none;
-  height: 5rem;
-}
-/* Header styles with user profile and navigation */
-
 /* Header title */
 header h1 {
   font-size: 1.5em; /* Adjust size as needed */
   margin: 0; /* Remove default margin */
 }
 
-/* Navigation styling */
-nav ul {
-  list-style-type: none; /* No bullets for the list */
-  display: flex;
-  gap: 1em;
-}
-
-nav ul li a {
-  color: white; /* Text color for the links */
-  text-decoration: none; /* No underline */
-  font-weight: bold;
-}
 .entry_box {
   font-size: large;
   font-family: "Roboto Mono", monospace;
@@ -116,25 +110,22 @@ nav ul li a {
 }
 
 .form-group input[type="text"],
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 0.5em; /* Space between label and input */
-  border-radius: 5px; /* Rounded borders for inputs */
-  color: white;
-  border-color: gray;
-  background-color: #1c1c1c;
-}
 .form-group input[type="number"],
 .form-group textarea {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-top: 0.5em; /* Space between label and input */
   border-radius: 5px; /* Rounded borders for inputs */
   color: white;
-  border-color: gray;
-  background-color: #1c1c1c;
+  border-color: rgb(186, 186, 186);
+  background-color: #424242;
 }
+
+input{
+  align-items: center; 
+  justify-content: center;
+}
+
 .form-actions {
   display: grid;
   grid-template-columns: 50% 50%;
