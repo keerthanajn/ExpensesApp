@@ -36,7 +36,6 @@ export async function lmTicketFilter({
       }
     }
   }
-  // console.log("filter", lmTicketFilter);
 
   return lmTicketFilter;
 }
