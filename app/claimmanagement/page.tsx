@@ -1,15 +1,15 @@
 import React from "react";
-import "../review/review.css";
+import "./claimmanagement.css";
 //For Admin
-export default function ReviewIssue() {
+export default function Claim_Management() {
   return (
     <>
-      <h1>Review Issue</h1>
+      <legend>Claim Management</legend>
       <form>
         <p id="claimtext">Issue info</p>
         <div id="button_container">
-          <button id="accept_button">Accept</button>
-          <button id="deny_button">Deny</button>
+          <button type="submit" id="accept_button">Accept</button>
+          <button type="submit" id="deny_button">Deny</button>
         </div>
       </form>
     </>
