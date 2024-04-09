@@ -60,17 +60,53 @@ h1 {
   grid-area: contentbox;
 }
 #button_container {
+  grid-area: button_container;
   display: grid;
   grid-template-columns: 50% 50%;
 }
-#claimtext {
-  text-align: center;
+#reviewform_box
+{
+  margin: 8%;
+  padding: 2rem;
   background-color: #353535;
-  padding: 10%;
-  height: 10rem;
-  margin: 5%;
+  display: grid;
   border-radius: 10px;
   color: white;
+  grid-template-rows: auto 15rem auto;
+  grid-template-areas: 
+  'top_left_box top_right_box'
+  'bottom_main_box bottom_main_box'
+  'button_container button_container';
+  gap: 1rem;
+}
+#notes_box
+{
+
+}
+#top_right_box
+{
+  grid-area: top_right_box;
+  background-color: #1c1c1c;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#top_left_box
+{
+  grid-area: top_left_box;
+  background-color: #1c1c1c;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#bottom_main_box
+{
+  grid-area: bottom_main_box;
+  background-color: #1c1c1c;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#upload_date
+{
+  text-align: right;
 }
 button {
   margin: 0.3rem;
