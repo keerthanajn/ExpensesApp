@@ -72,17 +72,13 @@ h1 {
   display: grid;
   border-radius: 10px;
   color: white;
-  grid-template-rows: auto 15rem auto;
   grid-template-areas: 
   'top_left_box top_right_box'
   'bottom_main_box bottom_main_box'
   'button_container button_container';
   gap: 1rem;
 }
-#notes_box
-{
 
-}
 #top_right_box
 {
   grid-area: top_right_box;
