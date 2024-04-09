@@ -1,6 +1,6 @@
 import "./forms.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-// import { DevTool } from "@hookform/devtools";
+import { DevTool } from "@hookform/devtools";
 import FileInput from "./fileInput";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
@@ -9,7 +9,7 @@ export default function SubmitForm() {
   const { user } = useKindeBrowserClient();
   const currentUser = user;
   const form = useForm<ticketInputs>();
-  const { register, handleSubmit } = form;
+  const { register, handleSubmit, control } = form;
 
   const onSubmit: SubmitHandler<ticketInputs> = async (
     ticket: ticketInputs
@@ -24,10 +24,9 @@ export default function SubmitForm() {
     };
 
     try {
-      const response = await axios.post("api/forms", ticketPost, {
+      const response = await axios.post("api/submit", ticketPost, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
       form.reset();
     } catch (error) {
       console.log(error);
@@ -41,60 +40,59 @@ export default function SubmitForm() {
           <form className="claim-form" onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
               <legend>Submit a claim</legend>
-                <div className="form-group">
-                  <label htmlFor="Category">Category:</label>
-                    <input
-                      className="entry_box"
-                      type="text"
-                      id="category"
-                      name="category"
-                      required
-                      {...register("category")}
-                    />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Amount">Amount:</label>
-                  <input
-                    className="entry_box"
-                    type="number"
-                    id="amount"
-                    name="amount"
-                    required
-                    {...register("amount")}
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Currency">Currency:</label>
-                    <input
-                      className="entry_box"
-                      type="text"
-                      id="currency"
-                      name="currency"
-                      required
-                      {...register("currency")}
-                    />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Notes">Notes:</label>
-                    <textarea
-                      className="entry_box"
-                      id="notes"
-                      name="notes"
-                      {...register("notes")}
-                    />
-                </div>
-                <div>
-                  <label htmlFor="File">Drop the receipt below:</label>
-                    <FileInput register={register} />
-                </div>
+              <div className="form-group">
+                <label htmlFor="Category">Category:</label>
+                <input
+                  className="entry_box"
+                  type="text"
+                  id="category"
+                  name="category"
+                  required
+                  {...register("category")}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Amount">Amount:</label>
+                <input
+                  className="entry_box"
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  required
+                  {...register("amount")}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Currency">Currency:</label>
+                <input
+                  className="entry_box"
+                  type="text"
+                  id="currency"
+                  name="currency"
+                  required
+                  {...register("currency")}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Notes">Notes:</label>
+                <textarea
+                  className="entry_box"
+                  id="notes"
+                  name="notes"
+                  {...register("notes")}
+                />
+              </div>
+              <div>
+                <FileInput register={register} />
+              </div>
 
-                <div className="form-actions">
-                  <SubmitButton />
-                  <ClearButton form={form} />
-                </div>
-              </fieldset>
+              <div className="form-actions">
+                <SubmitButton />
+                <ClearButton form={form} />
+              </div>
+            </fieldset>
           </form>
-          {/* <DevTool control={control} /> */}
+          <DevTool control={control} />
         </div>
       </div>
     </>
