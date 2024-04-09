@@ -1,30 +1,45 @@
 import React from "react";
 import "./report.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+import axios from "axios";
 
-export default function Reviews() {
+type newErrorTicket = {
+  title: String,
+  details: String,
+}
+
+export default function Report() {
+  const form = useForm<newErrorTicket>();
+  const {register, handleSubmit} = form;
+
+  const onSubmit: SubmitHandler<newErrorTicket> = async (newErrorTicket: newErrorTicket) => {
+    try {
+      const response = await axios.post("api/error", newErrorTicket, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      form.reset();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   return (
     <>
       <div id="contentbox">
+        <h1>Report Issue</h1>
         <div className="register-box">
-          <form id="form" name="report-form" method="post" action="">
+          <form id="form" name="report-form" onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
               <legend>Report an Issue</legend>
               <br></br>
-
               <section>
-                <label htmlFor="userNum">User Id:</label>
-                  <input
-                    type="text"
-                    id="userId"
-                    name="userId"
-                    maxLength={8}
-                />
 
-                <label htmlFor="iName">Issue Title:</label>
-                <input type="text" id="iname" name="iname" />
+                <label htmlFor="title">Issue Title:</label>
+                <input type="text" id="title" name="title" required {...register("title")}/>
 
-                <label htmlFor="iDescription">Description:</label>
-                <input type="text" id="description" name="description" />
+                <label htmlFor="description">Description:</label>
+                <input type="text" id="description" name="description" required {...register("title")}/>
 
               </section>
 
