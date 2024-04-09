@@ -5,7 +5,6 @@ export default function Profile() {
     <>
       <div id="contentbox">
         <div className="profile-settings-box">
-          <h1>Profile</h1>
           <form
             id="profile-form"
             name="profile-form"

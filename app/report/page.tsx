@@ -5,7 +5,6 @@ export default function Reviews() {
   return (
     <>
       <div id="contentbox">
-        <h1>Report Issue</h1>
         <div className="register-box">
           <form id="form" name="report-form" method="post" action="">
             <fieldset>

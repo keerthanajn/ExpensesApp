@@ -58,10 +58,12 @@ body{
     transition: 0.4s;
 }
 
-
 #contentbox
 {
     grid-area: contentbox;
+}
+#innerbox
+{
     margin: 8%;
     display: grid;
     grid-template-rows: 30% 30% 30%;
@@ -71,7 +73,6 @@ body{
     'top_text top_text job_position'
     'long_bar long_bar long_bar'
     'displaybox_1 displaybox_2 displaybox_3'
-    
     ;
     gap: 2rem;
 }

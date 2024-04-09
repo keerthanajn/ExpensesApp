@@ -59,13 +59,6 @@ h1 {
 #contentbox {
   grid-area: contentbox;
 }
-form {
-  margin: 10%;
-  width: 100%;
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  padding: 1rem;
-}
 #button_container {
   display: grid;
   grid-template-columns: 50% 50%;
