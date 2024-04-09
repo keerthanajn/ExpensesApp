@@ -164,10 +164,6 @@ button:hover {
   transition: 0.6s;
 }
 
-.blueButton:hover {
-  background-color: #cccccc; /* Light grey background for hover state */
-}
-
 /* Styling for the form's blue borders around inputs */
 .blueBorder {
   border: 1px solid blue; /* Blue border as specified */

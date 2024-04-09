@@ -1,5 +1,5 @@
 import React from "react";
-import "../register/register.css";
+import "./report.css";
 
 export default function Reviews() {
   return (

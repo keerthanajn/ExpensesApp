@@ -58,27 +58,21 @@ body {
 legend {
   grid-area: legend;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   color: rgb(255, 255, 255);
   font-family: "Roboto Mono", monospace;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
   font-weight: bold;
   margin-bottom: 4rem;
   width: 100%;
 }
 /* Container for the entire form area */
 .container {
-  background-color: transparent; /* Light blue background color for the container */
+  background-color: #2c2c2c; 
   border-radius: 10px;
   padding: 2em;
   margin: 2rem;
 }
-
-#notes {
-  resize: none;
-  height: 5rem;
-}
-/* Header styles with user profile and navigation */
 
 /* Header title */
 header h1 {
@@ -86,27 +80,27 @@ header h1 {
   margin: 0; /* Remove default margin */
 }
 
-/* Navigation styling */
-nav ul {
-  list-style-type: none; /* No bullets for the list */
+.claim-form {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
+  gap: 10px; /* Space between form elements */
 }
 
-nav ul li a {
-  color: white; /* Text color for the links */
-  text-decoration: none; /* No underline */
-  font-weight: bold;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between label and input */
 }
+
 .entry_box {
   font-size: large;
   font-family: "Roboto Mono", monospace;
-  border: unset;
-  border-bottom: 1.5pt solid grey;
+  border: 1px solid #555;
   margin: 0.5rem;
-  padding: 1rem;
-  background-color: #f7f7f7;
+  padding: 10px;
+  background-color: #1c1c1c;
   border-radius: 4px;
+  color: white;
 }
 /* Styling form fields */
 .form-group label {
@@ -154,17 +148,6 @@ button:hover {
   transition: 0.6s;
 }
 
-.blueButton:hover {
-  background-color: #cccccc; /* Light grey background for hover state */
-}
-
-/* Styling for the form's blue borders around inputs */
-.blueBorder {
-  border: 1px solid blue; /* Blue border as specified */
-  padding: 10px; /* Padding inside the border */
-  margin-top: 1em; /* Space above the bordered area */
-}
-
 .dropzone-container {
   @apply flex items-center justify-center w-full;
 }
@@ -193,4 +176,17 @@ button:hover {
 
 .dropzone-hint {
   @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr; /* Stack on small screens */
+    grid-template-areas:
+      "header"
+      "contentbox";
+  }
+
+  .container, .entry_box, .form-group input[type="text"], .form-group textarea {
+    width: auto; /* Full width on small screens */
+  }
 }

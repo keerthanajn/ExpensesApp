@@ -1,5 +1,5 @@
 import React from "react";
-import "../review/review.css";
+import "./review/review.css";
 //For Admin
 export default function ReviewIssue() {
   return (

@@ -152,3 +152,16 @@ button#cancel:hover,
 button:hover {
   background-color: #0056b3; /* Lighter blue shade for hover effect */
 }
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr; /* Stack on small screens */
+    grid-template-areas:
+      "header"
+      "contentbox";
+  }
+
+  .container, .entry_box, .form-group input[type="text"], .form-group textarea {
+    width: auto; /* Full width on small screens */
+  }
+}
