@@ -24,7 +24,7 @@ export default function ReviewForm({
       </div>
       <div id="bottom_main_box">
         <p>Amount: {amount}</p>
-        <p>currency: {currency}</p>
+        <p>Currency: {currency}</p>
         <p id="notes_box">{notes}</p>
       </div>
       <div id="button_container">
