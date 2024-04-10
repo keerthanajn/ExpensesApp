@@ -28,7 +28,10 @@ export default async function RootLayout({
         {currentUser && (
           <>
             <Navbar />
-            <Sidebar status={currentUser.userDetails.userStatus} />
+            <Sidebar
+              status={currentUser.userDetails.userStatus}
+              lineman={!!currentUser.employees}
+            />
           </>
         )}
         {children}
