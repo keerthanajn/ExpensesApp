@@ -26,14 +26,16 @@ export async function findUser(
   }
   return await findEmployee(foundUser);
 }
-
+export async function findErrorTicket() {
+  return await ErrorTicket.find();
+}
 export async function findPayTicket(dateMade) {
   return PayTicket.findOne({ dateMade: dateMade });
 }
 
 export async function findResolvedError() {
-  return ErrorTicket.find({ resolved: true });
+  return await ErrorTicket.find({ resolved: true });
 }
 export async function findUnresolvedError() {
-  return ErrorTicket.find({ resolved: false });
+  return await ErrorTicket.find({ resolved: false });
 }

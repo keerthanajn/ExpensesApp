@@ -42,10 +42,12 @@ const employeeSchema: Schema<Employee> = new mongoose.Schema({
 });
 
 const errorTicketSchema: Schema<ErrorTicket> = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   title: String,
   details: String,
   resolved: Boolean,
   dateMade: Date,
+  response: String,
   user: userSchema,
 });
 

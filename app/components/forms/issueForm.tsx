@@ -7,13 +7,12 @@ import { useRouter } from "next/navigation";
 type reviewInput = {
   response: string;
 };
-export default function ReviewForm({
+export default function IssueForm({
   _id,
-  amount,
-  category,
-  currency,
+  index,
+  title,
+  details,
   dateMade,
-  notes,
   email,
   firstName,
   lastName,
@@ -21,18 +20,19 @@ export default function ReviewForm({
   const router = useRouter();
   const form = useForm<reviewInput>();
   const { register, handleSubmit } = form;
-  const onAccept: SubmitHandler<reviewInput> = async (
+  const onResolve: SubmitHandler<reviewInput> = async (
     reviewInput: reviewInput
   ) => {
     const reviewData = {
       userEmail: email,
       ticketId: _id,
       response: reviewInput.response,
-      status: "accepted",
+      index: index,
+      resolved: true,
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/review",
+        "http://localhost:3000/api/handleError",
         reviewData,
         {
           headers: {
@@ -41,24 +41,25 @@ export default function ReviewForm({
         }
       );
       setTimeout(() => {
-        router.push("/review");
+        router.push("/viewIssues");
       }, 1000);
     } catch (error) {
       console.log(error);
     }
   };
-  const onReject: SubmitHandler<reviewInput> = async (
+  const onUnresolve: SubmitHandler<reviewInput> = async (
     reviewInput: reviewInput
   ) => {
     const reviewData = {
       userEmail: email,
       ticketId: _id,
       response: reviewInput.response,
-      status: "accepted",
+      index: index,
+      resolved: false,
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/review",
+        "http://localhost:3000/api/handleError",
         reviewData,
         {
           headers: {
@@ -67,7 +68,7 @@ export default function ReviewForm({
         }
       );
       setTimeout(() => {
-        router.push("/review");
+        router.push("/viewIssues");
       }, 1000);
     } catch (error) {
       console.log(error);
@@ -83,11 +84,11 @@ export default function ReviewForm({
           <p>Email: {_.capitalize(email)}</p>
         </div>
         <div id="top_right_box">
-          <p id="upload_date">Made: {dateMade.toUTCString()}</p>
+          <p>Made: {dateMade.toUTCString()}</p>
         </div>
         <div id="bottom_main_box">
-          <p>Category: {_.capitalize(category)}</p>
-          {notes && <p id="notes_box"> Notes: {notes} </p>}
+          <p>Title: {_.capitalize(title)}</p>
+          {details && <p>Details: {_.capitalize(details)}</p>}
         </div>
         <textarea
           placeholder="Response"
@@ -98,16 +99,16 @@ export default function ReviewForm({
           <button
             id="accept_button"
             type="submit"
-            onClick={handleSubmit(onAccept)}
+            onClick={handleSubmit(onResolve)}
           >
-            Solved
+            Resolved
           </button>
           <button
             id="deny_button"
             type="submit"
-            onClick={handleSubmit(onReject)}
+            onClick={handleSubmit(onUnresolve)}
           >
-            Not Solved
+            Unresolve
           </button>
         </div>
       </div>

@@ -24,10 +24,12 @@ interface Employee {
 }
 
 interface ErrorTicket {
+  _id: ObjectId;
   title: string;
   details: string;
   resolved: boolean;
   dateMade: Date;
+  response?: string;
   user?: User;
 }
 type filteredTickets = {
