@@ -23,8 +23,7 @@ export default function ReviewForm({
         <p id="evidence">Proof: proof link</p>
       </div>
       <div id="bottom_main_box">
-        <p>Amount: {amount}</p>
-        <p>Currency: {currency}</p>
+        <p>{amount} {currency}</p>
         <p id="notes_box">{notes}</p>
       </div>
       <div id="button_container">
