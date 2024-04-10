@@ -6,7 +6,7 @@ export default function Navbar() {
     <header>
       {" "}
       <p>
-        <a href="/dashboard" className="header_item">
+        <a href="/view" className="header_item">
           FDM Expenses App
         </a>
       </p>{" "}

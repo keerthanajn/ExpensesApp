@@ -10,7 +10,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 export default async function App() {
   const { isAuthenticated } = getKindeServerSession();
   if (await isAuthenticated()) {
-    redirect("/dashboard");
+    redirect("/view");
   }
   return (
     <div id="main_body">

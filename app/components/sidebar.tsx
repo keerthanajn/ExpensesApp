@@ -3,9 +3,6 @@ import Link from "next/link";
 export default function Sidebar({ status }) {
   return (
     <div id="sidebar">
-      <Link href="/dashboard" className="sidebar_item">
-        Dashboard
-      </Link>
       <Link href="/profile" className="sidebar_item">
         Profile
       </Link>
