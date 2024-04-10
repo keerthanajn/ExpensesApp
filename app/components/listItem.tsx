@@ -15,7 +15,7 @@ export default function ListItem({
         <h2>{_.capitalize(status)} Claims</h2>
         <div className="claims-section" id={`${status}-claims`}>
           <ul>
-            {tickets[status] ? (
+            {tickets[status][0] ? (
               tickets[status].map((ticket, index) => (
                 <li key={index}>
                   {index + 1} Date: {ticket.dateMade.toLocaleDateString()},
@@ -23,7 +23,7 @@ export default function ListItem({
                 </li>
               ))
             ) : (
-              <li>Empty List</li>
+              <li>No {status} tickets</li>
             )}
           </ul>
         </div>
@@ -43,7 +43,7 @@ export function ListItemTr({
       <h2>{_.capitalize(status)} Claims</h2>
       <div className="claims-section" id={`${status}-claims`}>
         <ul>
-          {tickets[status] ? (
+          {tickets[status][0] ? (
             tickets[status].map(
               (ticket: PayTicket, index: number) =>
                 index < 3 && (
@@ -54,7 +54,7 @@ export function ListItemTr({
                 )
             )
           ) : (
-            <li>Empty List</li>
+            <li>No {status} tickets</li>
           )}
         </ul>
         <Link href={`view/${status}`} id="view">
@@ -73,35 +73,113 @@ export function LmTicketList({ ticketList }: { ticketList: lmTicketList }) {
 
       <div className="claims-section" id={`pending-claims`}>
         <ul>
-          {ticketList.map(
-            (
-              {
-                employee: {
-                  userDetails: { firstName, lastName},
+          {ticketList ? (
+            ticketList.map(
+              (
+                {
+                  employee: {
+                    userDetails: { firstName, lastName },
+                  },
+                  payTickets,
                 },
-                payTickets,
-              },
-              index
-            ) => {
-              return (
-                <div key={index}>
-                  {payTickets.map((payTicket, index2) => {
-                    const ticketId = new ObjectId(payTicket._id);
-                    return (
-                      <Link href={`review/${ticketId}`} key={index2}>
-                        <li>
-                          {` ${firstName} ${lastName} | 
-                          ${payTicket.dateMade.toLocaleDateString()} |  ${payTicket.amount} ${payTicket.currency}`}
-                        </li>
-                      </Link>
-                    );
-                  })}
-                </div>
-              );
-            }
+                index
+              ) => {
+                return (
+                  <div key={index}>
+                    {payTickets.map((payTicket, index2) => {
+                      const ticketId = new ObjectId(payTicket._id);
+                      return (
+                        <Link href={`review/${ticketId}`} key={index2}>
+                          <li>
+                            {` ${firstName} ${lastName} | 
+                          ${payTicket.dateMade.toLocaleDateString()} |  ${
+                              payTicket.amount
+                            } ${payTicket.currency}`}
+                          </li>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                );
+              }
+            )
+          ) : (
+            <h2>No claims to review</h2>
           )}
         </ul>
       </div>
     </div>
+  );
+}
+export function ErrorTicketList({
+  tickets,
+  status,
+}: {
+  tickets: errorTicketList;
+  status: string;
+}) {
+  const ObjectId = require("mongoose").Types.ObjectId;
+
+  return (
+    <>
+      <h2>{_.capitalize(status)} Errors</h2>
+      <div
+        className="claims-section"
+        id={`${status == "unresolved" ? "rejected" : "accepted"}-claims`}
+      >
+        <ul>
+          {tickets[status][0] ? (
+            tickets[status].map((ticket: ErrorTicket, index: number) => (
+              <li key={index}>
+                #{index + 1} Date: {ticket.dateMade.toLocaleDateString()}
+                <br />
+                Title: {ticket.title}
+              </li>
+            ))
+          ) : (
+            <li>No {status} tickets</li>
+          )}
+        </ul>
+      </div>
+    </>
+  );
+}
+export function ErrorTicketListTr({
+  tickets,
+  status,
+}: {
+  tickets: errorTicketList;
+  status: string;
+}) {
+  const ObjectId = require("mongoose").Types.ObjectId;
+
+  return (
+    <>
+      <h2>{_.capitalize(status)} Errors</h2>
+      <div
+        className="claims-section"
+        id={`${status == "unresolved" ? "rejected" : "accepted"}-claims`}
+      >
+        <ul>
+          {tickets[status][0] ? (
+            tickets[status].map(
+              (ticket: ErrorTicket, index: number) =>
+                index < 3 && (
+                  <li key={index}>
+                    #{index + 1} Date: {ticket.dateMade.toLocaleDateString()}
+                    <br />
+                    Title: {ticket.title}
+                  </li>
+                )
+            )
+          ) : (
+            <li>No {status} tickets</li>
+          )}
+        </ul>
+        <Link href={`viewIssues/${status}`} id="view">
+          View more {status} claims
+        </Link>
+      </div>
+    </>
   );
 }

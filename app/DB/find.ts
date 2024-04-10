@@ -1,5 +1,5 @@
 import { HydratedDocument } from "mongoose";
-import { Employee, User, PayTicket } from "./main";
+import { Employee, User, PayTicket, ErrorTicket } from "./main";
 import _ from "lodash";
 
 export async function findEmployee({
@@ -29,4 +29,11 @@ export async function findUser(
 
 export async function findPayTicket(dateMade) {
   return PayTicket.findOne({ dateMade: dateMade });
+}
+
+export async function findResolvedError() {
+  return ErrorTicket.find({ resolved: true });
+}
+export async function findUnresolvedError() {
+  return ErrorTicket.find({ resolved: false });
 }

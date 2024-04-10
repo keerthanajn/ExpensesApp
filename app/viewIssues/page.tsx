@@ -3,8 +3,8 @@ import "../view/view.css";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { findUser } from "../DB/find";
 import Link from "next/link";
-import { ticketfilter } from "../DB/methods";
-import { ListItemTr } from "../components/listItem";
+import { errorTicketFilter, ticketfilter } from "../DB/methods";
+import { ErrorTicketListTr, ListItemTr } from "../components/listItem";
 
 export default async function ViewIssues() {
   const { getUser } = getKindeServerSession();
@@ -16,7 +16,7 @@ export default async function ViewIssues() {
 
   const currentUser = await findUser(user.email);
 
-  const filteredTickets = ticketfilter(currentUser);
+  const filteredTickets = await errorTicketFilter();
 
   return (
     <>
@@ -24,10 +24,9 @@ export default async function ViewIssues() {
         <div className="claims-container">
           <h1>View Issues</h1>
 
-          <ListItemTr tickets={filteredTickets} status={"unresolved"} />
+          <ErrorTicketListTr tickets={filteredTickets} status={"unresolved"} />
 
-          <ListItemTr tickets={filteredTickets} status={"resolved"} />
-
+          <ErrorTicketListTr tickets={filteredTickets} status={"resolved"} />
         </div>
       </div>
     </>

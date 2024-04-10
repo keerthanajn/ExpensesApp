@@ -1,5 +1,5 @@
 import { HydratedDocument } from "mongoose";
-import { findUser } from "./find";
+import { findResolvedError, findUnresolvedError, findUser } from "./find";
 
 export function ticketfilter({ payTickets }: Employee) {
   let filteredTickets: filteredTickets = {
@@ -38,4 +38,11 @@ export async function lmTicketFilter({
   }
 
   return lmTicketFilter;
+}
+
+export async function errorTicketFilter() {
+  return {
+    unresolved: await findUnresolvedError(),
+    resolved: await findResolvedError(),
+  };
 }

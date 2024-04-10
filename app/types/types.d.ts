@@ -30,13 +30,18 @@ interface ErrorTicket {
   dateMade: Date;
   user?: User;
 }
-interface filteredTickets {
+type filteredTickets = {
   accepted: PayTicket[];
   rejected: PayTicket[];
   pending: PayTicket[];
-}
+};
 
 type lmTicketList = {
   employee: HydratedDocument<Employee>;
   payTickets: PayTicket[];
 }[];
+
+type errorTicketList = {
+  resolved: ErrorTicket[];
+  unresolved: ErrorTicket[];
+};
