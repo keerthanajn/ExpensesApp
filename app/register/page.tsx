@@ -8,7 +8,7 @@ type newUserData = {
   lastName: string;
   email: string;
   lMEmail: string;
-  status: "employee" | "lineManager" | "iTStaff" | "finance" | "admin";
+  status: "employee" | "lineManager" | "iTSupport" | "finance" | "admin";
 };
 
 export default function Register() {
@@ -93,7 +93,7 @@ export default function Register() {
                     <option disabled>Select Employee Status</option>
                     <option value="employee">Employee</option>
                     <option value="lineManager">Line Managers</option>
-                    <option value="iTStaff">IT Support Staff</option>
+                    <option value="iTSupport">IT Support Staff</option>
                     <option value="finance">Finance Team</option>
                     <option value="admin">Administrator</option>
                   </select>

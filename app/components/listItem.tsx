@@ -15,7 +15,7 @@ export default function ListItem({
         <h2>{_.capitalize(status)} Claims</h2>
         <div className="claims-section" id={`${status}-claims`}>
           <ul>
-            {tickets[status][0] ? (
+            {tickets[status] ? (
               tickets[status].map((ticket, index) => (
                 <li key={index}>
                   {index + 1} Date: {ticket.dateMade.toLocaleDateString()},
@@ -43,7 +43,7 @@ export function ListItemTr({
       <h2>{_.capitalize(status)} Claims</h2>
       <div className="claims-section" id={`${status}-claims`}>
         <ul>
-          {tickets[status][0] ? (
+          {tickets[status] ? (
             tickets[status].map(
               (ticket: PayTicket, index: number) =>
                 index < 3 && (
@@ -128,7 +128,7 @@ export function ErrorTicketList({
         id={`${status == "unresolved" ? "rejected" : "accepted"}-claims`}
       >
         <ul>
-          {tickets[status][0] ? (
+          {tickets[status] ? (
             tickets[status].map((ticket: ErrorTicket, index: number) => (
               <li key={index}>
                 #{index + 1} Date: {ticket.dateMade.toLocaleDateString()}
@@ -161,7 +161,7 @@ export function ErrorTicketListTr({
         id={`${status == "unresolved" ? "rejected" : "accepted"}-claims`}
       >
         <ul>
-          {tickets[status][0] ? (
+          {tickets[status] ? (
             tickets[status].map(
               (ticket: ErrorTicket, index: number) =>
                 index < 3 && (
@@ -176,9 +176,11 @@ export function ErrorTicketListTr({
             <li>No {status} tickets</li>
           )}
         </ul>
-        <Link href={`viewIssues/${status}`} id="view">
-          View more {status} claims
-        </Link>
+        {tickets[status].length >= 3 && (
+          <Link href={`viewIssues/${status}`} id="view">
+            View more {status} claims
+          </Link>
+        )}
       </div>
     </>
   );

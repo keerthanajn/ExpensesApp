@@ -1,11 +1,10 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { findUser } from "../../DB/find";
 import { ticketfilter } from "../../DB/methods";
-import "../view/view.css";
 import _ from "lodash";
 import ListItem from "../../components/listItem";
 type Params = {
-  status: "unresolved" | "resolved" ;
+  status: "unresolved" | "resolved";
 };
 
 export default async function RequestIssues({
