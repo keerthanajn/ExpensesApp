@@ -30,21 +30,22 @@ export default async function Reviewclaim({ params: { ticketID } }) {
     });
   });
 
-  const { amount, dateMade, currency, notes } = TPData.payTicket;
+  const { amount, dateMade, currency, category, notes } = TPData.payTicket;
   const { userDetails } = TPData.employee;
 
   return TPData ? (
     <div id="contentbox">
       <ReviewForm
-      _id={ticketID}
-      amount={amount}
-      currency={currency}
-      dateMade={dateMade}
-      notes={notes}
-      email={userDetails.email}
-      firstName={userDetails.firstName}
-      lastName={userDetails.lastName}
-    />
+        _id={ticketID}
+        amount={amount}
+        category={category}
+        currency={currency}
+        dateMade={dateMade}
+        notes={notes}
+        email={userDetails.email}
+        firstName={userDetails.firstName}
+        lastName={userDetails.lastName}
+      />
     </div>
   ) : (
     <h1> Ticket not found</h1>
