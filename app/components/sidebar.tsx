@@ -7,7 +7,7 @@ export default function Sidebar({ status, lineman }) {
         Profile
       </Link>
       <Link href="/view" className="sidebar_item">
-        View Claims
+        View Your Claims
       </Link>
       <Link href="/submit" className="sidebar_item">
         Submit Claim

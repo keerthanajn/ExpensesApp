@@ -75,10 +75,22 @@ h1 {
   grid-template-areas: 
   'top_left_box top_right_box'
   'bottom_main_box bottom_main_box'
+  'manager_response manager_response'
   'button_container button_container';
   gap: 1rem;
 }
-
+#manager_response
+{
+  grid-area: manager_response;
+  font-size: large;
+  font-family: "Roboto Mono", monospace;
+  border: 1px solid #555;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  color: white;
+  resize: none;
+  padding: 1rem;
+}
 #top_right_box
 {
   grid-area: top_right_box;
