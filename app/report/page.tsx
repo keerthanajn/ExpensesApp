@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import "./report.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
@@ -27,7 +28,6 @@ export default function Report() {
   return (
     <>
       <div id="contentbox">
-        <h1>Report Issue</h1>
         <div className="register-box">
           <form id="form" name="report-form" onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
@@ -39,7 +39,7 @@ export default function Report() {
                 <input type="text" id="title" name="title" required {...register("title")}/>
 
                 <label htmlFor="description">Description:</label>
-                <input type="text" id="description" name="description" required {...register("title")}/>
+                <textarea id="description" name="description" required {...register("title")}/>
 
               </section>
 
