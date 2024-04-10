@@ -11,7 +11,7 @@ h1 {
 }
 
 html {
-  background-image: url(../public/waves_image.jpg);
+  background-image: url(./public/images/waves_image.jpg);
 }
 body {
   background: transparent;

@@ -77,7 +77,7 @@ export function LmTicketList({ ticketList }: { ticketList: lmTicketList }) {
             (
               {
                 employee: {
-                  userDetails: { firstName, lastName },
+                  userDetails: { firstName, lastName},
                 },
                 payTickets,
               },
@@ -90,10 +90,8 @@ export function LmTicketList({ ticketList }: { ticketList: lmTicketList }) {
                     return (
                       <Link href={`review/${ticketId}`} key={index2}>
                         <li>
-                          {` ${firstName} ${lastName}
-                          Date Made:  ${payTicket.dateMade.toLocaleDateString()} Real ticket: ${
-                            payTicket.evidence.data ? "Yes" : "No"
-                          }`}
+                          {` ${firstName} ${lastName} | 
+                          ${payTicket.dateMade.toLocaleDateString()} |  ${payTicket.amount} ${payTicket.currency}`}
                         </li>
                       </Link>
                     );
