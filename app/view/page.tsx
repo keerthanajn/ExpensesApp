@@ -20,7 +20,7 @@ export default async function View() {
     <>
       <div id="contentbox">
         <div className="claims-container">
-          <h1>View Claims</h1>
+          <h1>View Your Claims</h1>
 
           <ListItemTr tickets={filteredTickets} status={"pending"} />
 
