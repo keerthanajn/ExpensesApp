@@ -61,7 +61,7 @@ body {
   grid-area: contentbox;
 }
 
-.claim-form{
+.claim-form {
   padding: 15px;
   background-color: #1c1c1c;
   border-radius: 10px;
@@ -121,8 +121,8 @@ header h1 {
   background-color: #424242;
 }
 
-input{
-  align-items: center; 
+input {
+  align-items: center;
   justify-content: center;
 }
 
@@ -175,6 +175,10 @@ input::-webkit-inner-spin-button {
 .dropzone-label {
   background-color: #1c1c1c;
   @apply flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer  hover:bg-gray-100  dark:hover:bg-gray-600 dark:border-gray-600 dark:hover:border-gray-500;
+}
+.dropzone-label2 {
+  background-color: #1c1c1c;
+  @apply flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:hover:border-gray-500;
 }
 
 .dropzone-input {

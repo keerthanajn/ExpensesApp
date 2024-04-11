@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
-
 import { findPayTicket, findUser } from "../../DB/find";
 
 export async function POST(req: Request) {
   const reviewData = await req.json();
-  console.log(reviewData);
 
   const User = await findUser(reviewData.userEmail);
   let index;

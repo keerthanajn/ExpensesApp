@@ -44,7 +44,7 @@ export default function ReviewForm({
         router.push("/review");
       }, 1000);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   const onReject: SubmitHandler<reviewInput> = async (
@@ -70,7 +70,7 @@ export default function ReviewForm({
         router.push("/review");
       }, 1000);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   return (

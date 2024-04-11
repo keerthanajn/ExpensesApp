@@ -6,7 +6,6 @@ export async function findEmployee({
   email,
 }: User): Promise<HydratedDocument<Employee | null>> {
   if (!email) {
-    console.log("no email");
     return null;
   } else {
     return await Employee.findOne({ "userDetails.email": email });
@@ -21,7 +20,6 @@ export async function findUser(
   });
 
   if (!email || !foundUser) {
-    console.log("no email or no user");
     return null;
   }
   return await findEmployee(foundUser);

@@ -44,7 +44,7 @@ export default function IssueForm({
         router.push("/viewIssues");
       }, 1000);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   const onUnresolve: SubmitHandler<reviewInput> = async (
@@ -71,7 +71,7 @@ export default function IssueForm({
         router.push("/viewIssues");
       }, 1000);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   return (
