@@ -84,7 +84,6 @@ export default function ReviewForm({
         </div>
         <div id="top_right_box">
           <p id="upload_date">Made: {dateMade.toUTCString()}</p>
-          <p id="evidence">Proof: proof link</p>
         </div>
         <div id="bottom_main_box">
           <p>Category: {_.capitalize(category)}</p>
